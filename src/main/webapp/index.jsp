@@ -7,7 +7,6 @@
 	<title>Online e-commerce Site</title>
 </head>
 <body>
-test words
-test done
+
 </body>
 </html>
