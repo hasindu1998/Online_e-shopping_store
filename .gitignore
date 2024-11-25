@@ -34,3 +34,4 @@ replay_pid*
 
 # Stop tracking DBconn file
 DBconn.java
+src/main/java/com/user/DBconn.java
