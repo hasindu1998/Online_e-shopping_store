@@ -30,3 +30,7 @@ replay_pid*
 # System-specific files
 .DS_Store
 /build/
+
+
+# Stop tracking DBconn file
+DBconn.java
