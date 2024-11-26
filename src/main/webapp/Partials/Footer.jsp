@@ -10,13 +10,12 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/CSS/footer.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/CSS/index.css">
-	<title>Footer</title>
 </head>
 <body>
 	<div class="main-footer-container">
 		<div class="footer-container">
 			<div class="footer-content-container">
-				<img src="${pageContext.request.contextPath}/Images/company-logo.png" alt="" class="company-logo">
+				<img src="${pageContext.request.contextPath}/Images/company-logo.png" alt="Logo" class="company-logo">
 				<p class="store-description">Get the best Items from us. Islandwide delivery available </p>
 	
 				<div class="social-media-button-container">
@@ -28,7 +27,7 @@
 			
 			<div class="footer-content-container">
 				<h3 class="footer-content-topic">Buy</h3>
-				<a href="" class="footer-links">Reister</a>
+				<a href="" class="footer-links">Register</a>
 				<a href="" class="footer-links">Categories</a>
 				<a href="" class="footer-links">Contact Us</a>
 				<a href="" class="footer-links">Privacy Policy</a>
@@ -51,8 +50,8 @@
 				</div>
 			</div>
 		</div>
-		<center class="copyright-tag">Copyright @2023-2024 Premier Mart PVT Ltd. All Right Reserved</center>
+		<center class="copyright-tag">Copyright &#169 2023-2024 GlobalGoods Enterprises PVT Ltd | All Right Reserved</center>
 	</div>
-
+	
 </body>
 </html>
