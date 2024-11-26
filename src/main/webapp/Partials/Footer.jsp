@@ -8,15 +8,15 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="../CSS/footer.css">
-	<link rel="stylesheet" href="../CSS/index.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/CSS/footer.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/CSS/index.css">
 	<title>Footer</title>
 </head>
 <body>
 	<div class="main-footer-container">
 		<div class="footer-container">
 			<div class="footer-content-container">
-				<img src="../Images/company-logo.png" alt="" class="company-logo">
+				<img src="${pageContext.request.contextPath}/Images/company-logo.png" alt="" class="company-logo">
 				<p class="store-description">Get the best Items from us. Islandwide delivery available </p>
 	
 				<div class="social-media-button-container">
