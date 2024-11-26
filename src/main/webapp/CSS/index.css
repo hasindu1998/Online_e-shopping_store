@@ -1,6 +1,30 @@
 @charset "UTF-8";
 
 *{
-	background-color: yellow;
-	height: 100vh;
+	font-family: "Poppins";
+
+}
+
+button{
+	background-color: #F27B12;
+	color: white;
+	cursor: pointer;
+    border-style: none;
+	font-weight: 500;
+	transition: 0.6s opacity;
+}
+
+button:hover{
+	opacity: 85%;
+
+}
+
+a{
+	text-decoration: none;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+p{
+	margin: 0;
 }

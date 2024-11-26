@@ -1,0 +1,82 @@
+.main-footer-container{
+    background-color: #02243F;
+    color: white;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+
+.footer-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 45px;
+    padding-top: 30px;
+
+}
+
+.store-description,
+.newletter-content{
+    margin-top: 0px;
+    max-width: 300px;
+}
+
+.footer-content-container{
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.social-media-button-container{
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.fa{
+    color: aliceblue;
+    font-size: 19px;
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border-style: solid;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.fa:hover{
+    color: #F27B12;
+    border-color: #F27B12;
+}
+
+.footer-links{
+    margin-bottom: 5px;
+    color: white;
+    transition: 0.5s;
+}
+
+.footer-links:hover{
+    color: #F27B12;
+}
+
+
+
+.enter-email{
+    max-width: 250px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.submit-button{
+    padding: 12px;
+    border-radius: 5px;
+}
+
+.copyright-tag{
+    margin-bottom: 20px;
+}
