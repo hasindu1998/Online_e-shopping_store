@@ -1,8 +1,11 @@
 @charset "UTF-8";
 
+body{
+	background-color: aliceblue;
+}
+
 *{
 	font-family: "Poppins";
-
 }
 
 button{
