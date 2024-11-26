@@ -1,18 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%> 
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> 
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="${pageContext.request.contextPath}/CSS/index.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/CSS/sellerDB.css">
-
-<title>Insert title here</title>
+	<meta charset="UTF-8">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/CSS/index.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/CSS/sellerDB.css">
+	<title>Seller Dashboard</title>
 </head>
 <body>
 	<jsp:include page="./Partials/Header.jsp" />
@@ -100,12 +96,8 @@
 				</tr>
 			</table>
 		</div>
-
-		<div class="my-product-container"><a href="" class="my-product-page">My Products</a></center>
+		<center class="my-product-container"><a href="" class="my-product-page">My Products</a></center>
 	</div>
-
-	
-	
 	 
 	<jsp:include page="./Partials/Footer.jsp" />
 </body>
