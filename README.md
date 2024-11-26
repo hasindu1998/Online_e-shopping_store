@@ -1,7 +1,7 @@
 # Online_e-shopping_store
 
-Color Palette
+### Color Palette
 
-Buttons - #F27B12
-Headings - #02243F
-Background - #FDFDFB
+1. Buttons - #F27B12
+2. Headings - #02243F
+3. Background - #FDFDFB
