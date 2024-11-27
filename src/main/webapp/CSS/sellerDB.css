@@ -112,5 +112,9 @@ button.delete-message{
 
 .my-product-page:hover{
 	opacity: 85%;
+}
 
+.my-product-container{
+	display: flex;
+	justify-content: center;
 }

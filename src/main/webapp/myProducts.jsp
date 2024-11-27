@@ -39,6 +39,7 @@
                         <input type="file" class="add-image input-details"><br>
                         <textarea name="" class="input-details" cols="55" rows="7"></textarea>
                     </div>
+                    <div class="submit-button-container"><button class="submit-button">Submit</button></div>
                 </form>
             </div>
             <div class="product-table-container">

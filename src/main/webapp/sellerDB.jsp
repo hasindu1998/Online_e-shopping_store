@@ -96,7 +96,9 @@
 				</tr>
 			</table>
 		</div>
-		<center class="my-product-container"><a href="" class="my-product-page">My Products</a></center>
+		<div class="my-product-container">
+			<a href="myProducts.jsp" class="my-product-page">My Products</a>
+		</div>
 	</div>
 	 
 	<jsp:include page="./Partials/Footer.jsp" />
