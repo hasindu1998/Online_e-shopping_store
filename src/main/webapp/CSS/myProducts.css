@@ -1,0 +1,112 @@
+.manage-my-products-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.add-products-container{
+    margin-top: 40px;
+    border-style: none;
+    border-radius: 12px;
+    padding: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    box-shadow: 0px 0px 20px -3px rgba(0,0,0,1);
+}
+
+.product-table-container{
+
+    background-color: white;
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    padding: 20px;
+    height: 400px;
+    border-style: none;
+    border-radius: 15px;
+    box-shadow: 0px 0px 4px 2px rgba(143,143,143,1);
+    overflow: scroll;
+    width: 900px;
+}
+
+.quantity-price{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.add-product-topic{
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-weight: 500;
+    color: #02243F;
+}
+
+.input-details{
+    margin-top: 20px;
+}
+
+.product-name,
+.price,
+.quantity{
+    padding: 10px;
+    border-radius: 8px;
+    border-style: none;
+}
+
+.product-name{
+    width: 350px;
+}
+
+.quantity,
+.price{
+    width: 100px;
+}
+
+.quantity{
+    margin-left: 30px;
+}
+
+.category{
+    font-size: 15px;
+    vertical-align: middle;
+}
+
+
+
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+table tr:nth-child(odd){
+    background-color: aliceblue;
+}
+
+th{
+    font-weight: 500;
+    background-color: #06467e;
+    color: aliceblue;
+    padding: 5px;
+}
+
+td{
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.edit,
+.delete{
+    padding: 5px 10px;
+}
+
+.delete{
+    background-color: rgb(170, 0, 0);;
+}
