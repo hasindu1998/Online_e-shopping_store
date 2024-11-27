@@ -25,7 +25,7 @@
                     <h3 class="add-product-topic">Add Product</h3>
                     <div class="input-rows">
                         <input type="text" class="product-name input-details" placeholder="Product Name"><br>
-                        <input type="number"" class="price input-details" placeholder="Price">
+                        <input type="number" class="price input-details" placeholder="Price">
                         <input type="number" class="quantity input-details" placeholder="Quantity"><br>
                         <label class="category input-details">Category</label>
                         <select name="category" class="input-details">
