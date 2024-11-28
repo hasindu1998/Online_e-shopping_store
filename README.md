@@ -15,7 +15,7 @@
 | Admin Dashboard    | Moditha |        |
 | User Profile       | Moditha | Done   |
 | Signin Page        | Moditha | Done   |
-| Register Page      | Moditha |        |
+| Register Page      | Moditha | Done   |
 | Cart               | Hasindu |        |
 | Contact us Page    | Hasindu | Done   |
 | Masseges Page      | Moditha |        |
