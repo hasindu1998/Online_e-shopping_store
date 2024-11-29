@@ -19,7 +19,7 @@
 | Cart               | Hasindu |        |
 | Contact us Page    | Hasindu | Done   |
 | Masseges Page      | Moditha |        |
-| My Orders Page     | Hasindu |        |
+| My Orders Page     | Hasindu | Done   |
 | My Products Page   | Hasindu | Done   |
 | Product Order Page | Moditha |        |
 | About Us Page      | Moditha |        |
