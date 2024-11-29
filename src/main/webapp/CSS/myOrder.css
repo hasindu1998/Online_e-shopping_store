@@ -1,0 +1,54 @@
+.my-orders-container{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+.my-order-heading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.order-heading{
+  font-size: 40px;
+  color: #06467e;
+}
+
+.my-order-table{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  max-width: 1500px;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0px 0px 20px -3px rgba(0,0,0,1);
+  overflow: scroll;
+}
+
+.my-order-table table{
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+table tr:nth-child(odd){
+  background-color: rgb(194, 194, 194);
+}
+
+th{
+  font-weight: 500px;
+  height: 50px;
+  background-color: #06467e;
+  color: white;
+  padding: 5px;
+}
+
+td{
+  padding-top: 8px;
+  padding-bottom: 8px;
+  height: 50px;
+}
