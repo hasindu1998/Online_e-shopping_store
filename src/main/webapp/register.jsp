@@ -33,6 +33,11 @@
 					<input type="password" name="password" placeholder="Password" required>
 					<input type="password" name="confirmpassword" placeholder="Confirm Password" required>
 				</div>
+				<div class="radiobtns">
+						<b>User Type :</b>
+						<input type="radio" name="userType" value="seller" required> Seller
+						<input type="radio" name="userType" value="buyer"> Buyer
+				</div>
 				<div class="rows submitbtn">
 					<input type="submit" value="Register">
 				</div>
