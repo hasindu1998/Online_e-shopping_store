@@ -18,16 +18,17 @@
 			<div class="leftsect">
 				<div class="floatsect">
 					<div class="profileimg">
+						<h2 class="usrname">Hello Username</h2>
 						<img src="${pageContext.request.contextPath}/Images/profileicon.webp" alt="Profile Picture">
 						<form action="" method="POST">
 							<input type="file" name="profilepic" id="profilepic" accept="image/*">
 						</form>
 						<div class="links">
-							<p><a href="#pwds">Change Password</a></p>
-							<p><a href="#">My Orders</a></p>
-							<p><a href="#">My Cart</a></p>
-							<p><a href="#">My Products</a></p>
-							<p><a href="#">Logout</a></p>
+							<p><a href="#pwds">&#9658 Change Password</a></p>
+							<p><a href="#">&#9658 My Orders</a></p>
+							<p><a href="#">&#9658 My Cart</a></p>
+							<p><a href="#">&#9658 My Products</a></p>
+							<p><a href="#">&#9658 Logout</a></p>
 						</div>
 						<form action="#" method="POST">
 							<input class="submitbtn" id="deleteacc" type="submit" value="Delete Account">

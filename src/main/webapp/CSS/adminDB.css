@@ -1,1 +1,135 @@
 @charset "UTF-8";
+
+.stats-container{
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.stats-content{
+    width: 250px;
+    margin-top: 40px;
+    padding: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    background:  linear-gradient(to right bottom, #02243F,#06467e);
+    box-shadow: 0px 0px 20px -3px rgba(0,0,0,1);
+    border-radius: 15px;
+    transition: 0.6s;
+}
+
+.stats-content:hover,
+.stats-content:focus{
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    transform: translateY(-0.25em);
+    
+}
+
+.stats-topic{
+    color: white;
+    margin-top: 0px;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.stats-amount{
+    font-size: 20px;
+    color: #f07f1c;
+    font-weight: 500;
+}
+
+.users{
+    width: 95%;
+    margin: 40px auto;
+}
+
+.tablecontainer{
+    max-height: 900px;
+    overflow: scroll;
+    margin-top: 15px;
+    border-radius: 15px;
+}
+
+.users table{
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 15px;
+}
+
+.users th{
+    background-color: #113857;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    text-align: start;
+}
+
+.users td{
+    padding: 10px;
+    font-size: 17px;
+    color: #113857;
+    border-bottom: #02243F 1px solid;
+}
+
+.users td img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 4px;
+    padding-left: 10px;
+}
+
+.users table td.namecolumn{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.btn {
+    background-color: red;
+    width: 100px;
+    height: 30px;
+}
+
+.users th.usrname {
+    width: 30%;
+}
+
+.users th.mail {
+    width: 40%;
+}
+
+.users th.role {
+    width: 15%;
+}
+
+.users th.action {
+    width: 15%;
+}
+
+.userrole {
+    border: 2px solid orange;
+    padding: 5px;
+    border-radius: 30px;
+    background-color: rgba(241, 210, 153,0.5);
+}
+
+/* Masseges table */
+
+.messages {
+    width: 95%;
+    margin: 20px auto;
+    max-height: 900px;
+    overflow: scroll;
+}
+
+.editbtn {
+    background-color: #f07f1c;
+}
+
+.count {
+    color: #f07f1c;
+}

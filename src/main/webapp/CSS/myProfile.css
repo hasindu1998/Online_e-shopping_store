@@ -76,7 +76,7 @@
 .profileimg img{
 	width: 25%;
 	border-radius: 50%;
-	margin-top: 25px;
+	margin-top: 10px;
 }
 
 .profileimg{
@@ -105,12 +105,16 @@
 	color: #F27B12;
 }
 
+.profileimg h2{
+	margin-top: 20px;
+}
+
 /* Buttons */
 
 input#deleteacc{
 	background-color: rgb(238, 36, 36);
 	height: 45px;
-	margin-top: 70px;
+	margin-top: 60px;
 }
 
 input.submitbtn{

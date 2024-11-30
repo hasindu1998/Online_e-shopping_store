@@ -12,7 +12,7 @@
 | Home               | Hasindu |        |
 | Products Page      | Hasindu |        |
 | Seller Dashboard   | Hasindu | Done   |
-| Admin Dashboard    | Moditha |        |
+| Admin Dashboard    | Moditha | Don    |
 | User Profile       | Moditha | Done   |
 | Signin Page        | Moditha | Done   |
 | Register Page      | Moditha | Done   |
