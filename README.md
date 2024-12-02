@@ -22,5 +22,5 @@
 | My Orders Page     | Hasindu | Done   |
 | My Products Page   | Hasindu | Done   |
 | Product Order Page | Moditha | Done   |
-| About Us Page      | Moditha |        |
+| About Us Page      | Moditha | Done   |
 | Privacy Policy     | Hasindu | Done   |
