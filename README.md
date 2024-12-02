@@ -16,11 +16,11 @@
 | User Profile       | Moditha | Done   |
 | Signin Page        | Moditha | Done   |
 | Register Page      | Moditha | Done   |
-| Cart               | Hasindu |        |
+| Cart               | Hasindu | Done   |
 | Contact us Page    | Hasindu | Done   |
 | Masseges Page      | Moditha |        |
 | My Orders Page     | Hasindu | Done   |
 | My Products Page   | Hasindu | Done   |
 | Product Order Page | Moditha |        |
 | About Us Page      | Moditha |        |
-| Privacy Policy     | Hasindu |        |
+| Privacy Policy     | Hasindu | Done   |
