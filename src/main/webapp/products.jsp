@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/CSS/products.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/CSS/index.css">
 
-<title>Insert title here</title>
+<title>Products</title>
 </head>
 <body>
 	<jsp:include page="./Partials/Header.jsp" />
