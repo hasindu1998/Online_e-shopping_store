@@ -10,7 +10,7 @@
 |        Page        |    By   | Status |
 |:------------------:|:-------:|--------|
 | Home               | Hasindu |        |
-| Products Page      | Hasindu |        |
+| Products Page      | Hasindu | Done   |
 | Seller Dashboard   | Hasindu | Done   |
 | Admin Dashboard    | Moditha | Done   |
 | User Profile       | Moditha | Done   |
@@ -21,6 +21,6 @@
 | Masseges Page      | Moditha |        |
 | My Orders Page     | Hasindu | Done   |
 | My Products Page   | Hasindu | Done   |
-| Product Order Page | Moditha |        |
+| Product Order Page | Moditha | Done   |
 | About Us Page      | Moditha |        |
 | Privacy Policy     | Hasindu | Done   |
