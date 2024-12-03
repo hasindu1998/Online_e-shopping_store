@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+.msgcontainer {
+    width: 100%;
+}
+
+.msgs {
+    width: 90%;
+    margin: 30px auto;
+}
+
+.msgs h2 {
+    color: #113857;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.table1 {
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 15px;
+    min-height: 200px;
+    max-height: 900px;
+    overflow: scroll;
+}
+
+.table1 table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table1 table th {
+    background-color: #113857;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    text-align: start;
+}
+
+.table1 table td{
+    padding: 10px;
+    font-size: 17px;
+    color: #113857;
+    border-bottom: #02243F 1px solid;
+}
+
+.table1 table tr:hover {
+    background-color: #f2f2f2;
+}
+
+.table1 table input[type="submit"] {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
