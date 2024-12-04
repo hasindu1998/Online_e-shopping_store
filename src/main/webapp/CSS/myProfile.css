@@ -5,8 +5,8 @@
 	display: flex;
 	flex-direction: row;
 	min-height: 100vh;
-	margin-top: 20px;
-	margin-bottom: 15px;
+	margin-top: 30px;
+	margin-bottom: 25px;
 }
 
 .leftsect{
