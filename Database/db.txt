@@ -1,0 +1,140 @@
+-- Create User Table
+CREATE TABLE User (
+    userid INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    Fname VARCHAR(50) NOT NULL,
+    Lname VARCHAR(50) NOT NULL,
+    Email VARCHAR(100) NOT NULL UNIQUE,
+    mobileno VARCHAR(15) NOT NULL,
+    birthday DATE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    userType ENUM('buyer', 'seller', 'admin') NOT NULL,
+    address VARCHAR(255),
+    city VARCHAR(100),
+    province VARCHAR(100),
+    country VARCHAR(100),
+    postal_code VARCHAR(20),
+    profilepic_url VARCHAR(255)
+);
+
+-- Create Product Table
+CREATE TABLE Product (
+    productid INT AUTO_INCREMENT PRIMARY KEY,
+    product_name VARCHAR(100) NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    qty_available INT NOT NULL,
+    category ENUM('Electronics', 'Sports', 'Health & Beauty', 'Groceries', 'Stationary', 'Fashion') NOT NULL,
+    description TEXT,
+    productimg VARCHAR(255),
+    sellerId INT NOT NULL,
+    FOREIGN KEY (sellerId) REFERENCES User(userid) ON DELETE CASCADE
+);
+
+-- Create ContactUs Table
+CREATE TABLE ContactUs (
+    contactusId INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    message TEXT NOT NULL
+);
+
+-- Create Message Table
+CREATE TABLE Message (
+    messageid INT AUTO_INCREMENT PRIMARY KEY,
+    to_user_id INT NOT NULL,
+    from_user_id INT NOT NULL,
+    subject VARCHAR(255) NOT NULL,
+    message TEXT NOT NULL,
+    response TEXT,
+    date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (to_user_id) REFERENCES User(userid) ON DELETE CASCADE,
+    FOREIGN KEY (from_user_id) REFERENCES User(userid) ON DELETE CASCADE
+);
+
+-- Create Order Table
+CREATE TABLE OrderTable (
+    orderid INT AUTO_INCREMENT PRIMARY KEY,
+    Fname VARCHAR(50) NOT NULL,
+    Lname VARCHAR(50) NOT NULL,
+    country VARCHAR(100),
+    address VARCHAR(255),
+    apartment VARCHAR(100),
+    city VARCHAR(100),
+    province VARCHAR(100),
+    postal_code VARCHAR(20),
+    phone VARCHAR(15) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    status ENUM('Pending', 'Processing', 'Shipped', 'Delivered', 'Cancelled') DEFAULT 'Pending',
+    buyerid INT NOT NULL,
+    FOREIGN KEY (buyerid) REFERENCES User(userid) ON DELETE CASCADE
+);
+
+-- Create Order_Product Table
+CREATE TABLE Order_Product (
+    productid INT NOT NULL,
+    orderid INT NOT NULL,
+    qty INT NOT NULL,
+    PRIMARY KEY (productid, orderid),
+    FOREIGN KEY (productid) REFERENCES Product(productid) ON DELETE CASCADE,
+    FOREIGN KEY (orderid) REFERENCES OrderTable(orderid) ON DELETE CASCADE
+);
+
+
+
+
+
+
+-- Insert Sample Data into User Table
+INSERT INTO User (username, Fname, Lname, Email, mobileno, birthday, password, userType, address, city, province, country, postal_code, profilepic_url)
+VALUES 
+('moditha_m', 'Moditha', 'Marasingha', 'moditha@example.com', '0711234567', '2002-07-15', 'hashed_password_moditha', 'buyer', '123 Lotus Rd', 'Colombo', 'Western', 'Sri Lanka', '10100', 'https://example.com/moditha.jpg'),
+('kasun_perera', 'Kasun', 'Perera', 'kasun@example.com', '0772345678', '1998-03-12', 'hashed_password_kasun', 'seller', '456 Jasmine St', 'Galle', 'Southern', 'Sri Lanka', '80000', 'https://example.com/kasun.jpg'),
+('nimal_fernando', 'Nimal', 'Fernando', 'nimal@example.com', '0703456789', '1985-11-20', 'hashed_password_nimal', 'admin', '789 Orchid Ave', 'Kandy', 'Central', 'Sri Lanka', '20000', 'https://example.com/nimal.jpg'),
+('kamal_w', 'Kamal', 'Wijesinghe', 'kamal@example.com', '0724567890', '1995-02-08', 'hashed_password_kamal', 'buyer', '321 Rose St', 'Matara', 'Southern', 'Sri Lanka', '81000', 'https://example.com/kamal.jpg'),
+('isuri_g', 'Isuri', 'Gunasekara', 'isuri@example.com', '0765678901', '2000-09-25', 'hashed_password_isuri', 'seller', '654 Lily Ln', 'Jaffna', 'Northern', 'Sri Lanka', '40000', 'https://example.com/isuri.jpg');
+
+-- Insert Sample Data into Product Table
+INSERT INTO Product (product_name, price, qty_available, category, description, productimg, sellerId)
+VALUES 
+('Smartphone X', 85000.00, 10, 'Electronics', 'High-performance smartphone with 128GB storage.', 'https://example.com/smartphone.jpg', 2),
+('Cricket Bat', 4500.00, 25, 'Sports', 'Professional-grade cricket bat.', 'https://example.com/cricket_bat.jpg', 2),
+('Face Cream', 1200.00, 50, 'Health & Beauty', 'Moisturizing cream for all skin types.', 'https://example.com/face_cream.jpg', 5),
+('Rice Pack 5kg', 700.00, 100, 'Groceries', 'High-quality white rice.', 'https://example.com/rice_pack.jpg', 5),
+('Notebook Set', 300.00, 200, 'Stationary', 'Set of 5 A4 notebooks.', 'https://example.com/notebook_set.jpg', 5);
+
+-- Insert Sample Data into ContactUs Table
+INSERT INTO ContactUs (name, email, message)
+VALUES 
+('Dinusha Fernando', 'dinusha@example.com', 'I need help with my order.'),
+('Chamika Perera', 'chamika@example.com', 'Can I return a product?'),
+('Tharindu Silva', 'tharindu@example.com', 'Do you have more products in stock?'),
+('Amali Rathnayake', 'amali@example.com', 'I want to report a bug on the website.'),
+('Harsha Kumara', 'harsha@example.com', 'What is the warranty for electronics?');
+
+-- Insert Sample Data into Message Table
+INSERT INTO Message (to_user_id, from_user_id, subject, message, response, date)
+VALUES 
+(1, 2, 'Product Inquiry', 'Can you provide more details about the Smartphone X?', NULL, '2024-12-01 10:30:00'),
+(1, 5, 'Discount Request', 'Is there a discount available on the Rice Pack?', 'No discounts at the moment.', '2024-12-02 14:15:00'),
+(3, 1, 'Admin Update', 'Please update your profile.', NULL, '2024-12-03 09:00:00'),
+(4, 2, 'Product Complaint', 'The Cricket Bat quality is not as expected.', 'We will look into this.', '2024-12-03 15:45:00'),
+(5, 1, 'Shipping Inquiry', 'How long does it take to deliver to Colombo?', NULL, '2024-12-04 08:20:00');
+
+-- Insert Sample Data into Order Table
+INSERT INTO OrderTable (Fname, Lname, country, address, apartment, city, province, postal_code, phone, email, date, status, buyerid)
+VALUES 
+('Moditha', 'Marasingha', 'Sri Lanka', '123 Lotus Rd', NULL, 'Colombo', 'Western', '10100', '0711234567', 'moditha@example.com', '2024-12-01 11:00:00', 'Pending', 1),
+('Kamal', 'Wijesinghe', 'Sri Lanka', '321 Rose St', 'Apt 4B', 'Matara', 'Southern', '81000', '0724567890', 'kamal@example.com', '2024-12-02 09:30:00', 'Processing', 4),
+('Dinusha', 'Fernando', 'Sri Lanka', '789 Orchid Ave', NULL, 'Kandy', 'Central', '20000', '0709876543', 'dinusha@example.com', '2024-12-02 16:00:00', 'Shipped', 1),
+('Amali', 'Rathnayake', 'Sri Lanka', '456 Jasmine St', NULL, 'Galle', 'Southern', '80000', '0712345678', 'amali@example.com', '2024-12-03 12:45:00', 'Delivered', 4),
+('Harsha', 'Kumara', 'Sri Lanka', '654 Lily Ln', NULL, 'Jaffna', 'Northern', '40000', '0765678901', 'harsha@example.com', '2024-12-04 08:30:00', 'Pending', 1);
+
+-- Insert Sample Data into Order_Product Table
+INSERT INTO Order_Product (productid, orderid, qty)
+VALUES 
+(1, 1, 1),
+(2, 1, 2),
+(3, 2, 3),
+(4, 3, 1),
+(5, 4, 5);
