@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html>
@@ -24,10 +25,12 @@
                     <img src="${pageContext.request.contextPath}/Images/company-logo.png" alt="login page">
                     <h2>Welcome Back</h2>
                     <p>Please login to your account</p>
-                    <form action="" method="POST" >
+                    <form action="${pageContext.request.contextPath}/LoginServlet" method="POST" >
                         <input class="inputs" type="text" name="username" id="username" placeholder="Username" required>
                         <input class="inputs" type="password" name="password" id="password" placeholder="Password" required>
-                        <p id="error">Error !</p>
+                        <c:if test="${not empty loginError}">
+                        	<p id="error">${loginError}</p>
+                        </c:if>
                         <input class="submit" type="submit" value="Login">
                     </form>
                     <button class="regbtn" id="register">Register</button>
