@@ -36,7 +36,7 @@
 				    </div>
 				    <div class="Profile_dropdown" id="prof_dropdown">
 				        <div class="dropdown_items">
-				            <a href="#">My Profile</a>
+				            <a href="${pageContext.request.contextPath}/myProfileServlet">My Profile</a>
 				            <a onclick="return confirm('Do you want to log out now?')" href="${pageContext.request.contextPath}/LogoutServlet">Log Out</a>
 				        </div>
 				    </div>

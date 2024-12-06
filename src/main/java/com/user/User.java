@@ -4,8 +4,8 @@ public class User {
     private int id;
     private String username;
     private String password;
-    private String Fname;
-    private String Lname;
+    private String fname;
+    private String lname;
     private String email;
     private String phone;
     private String dob;
@@ -23,8 +23,8 @@ public class User {
 		this.id = id;
 		this.username = username;
 		this.password = password;
-		this.Fname = fname;
-		this.Lname = lname;
+		this.fname = fname;
+		this.lname = lname;
 		this.email = email;
 		this.phone = phone;
 		this.dob = dob;
@@ -50,11 +50,11 @@ public class User {
 	}
 
 	public String getFname() {
-		return Fname;
+		return fname;
 	}
 
 	public String getLname() {
-		return Lname;
+		return lname;
 	}
 
 	public String getEmail() {

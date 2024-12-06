@@ -1,4 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import="com.user.User" %>
+<%
+    User user = (User) request.getAttribute("user");
+    if (user == null) {
+        response.sendRedirect("index.jsp"); // Redirect if user is not found
+    }
+%>
 
 <!DOCTYPE html>
 <html>
@@ -18,8 +26,8 @@
 			<div class="leftsect">
 				<div class="floatsect">
 					<div class="profileimg">
-						<h2 class="usrname">Hello Username</h2>
-						<img src="${pageContext.request.contextPath}/Images/profileicon.webp" alt="Profile Picture">
+						<h2 class="usrname">Hello ${Fname}</h2>
+						<img src="${pageContext.request.contextPath}/Images/Profilepics/${propicUrl}" alt="Profile Picture">
 						<form action="" method="POST">
 							<input type="file" name="profilepic" id="profilepic" accept="image/*">
 						</form>
@@ -43,54 +51,54 @@
 						<div class="rows doublerows">
 							<div class="lableinput">
 								<label for="">First Name</label>
-								<input type="text" >
+								<input type="text" value="${user.fname}">
 							</div>
 							<div class="lableinput">
 								<label for="">Last Name</label>
-								<input type="text" >
+								<input type="text" value="${user.lname}">
 							</div>
 						</div>
 						<div class="rows">
 							<div class="lableinput singlerow">
 								<label for="">Email</label>
-								<input type="text" >
+								<input type="text" value="${user.email}">
 							</div>
 						</div>
 						<div class="rows doublerows">
 							<div class="lableinput">
 								<label for="">Contact No</label>
-								<input type="tel" >
+								<input type="tel" value="${user.phone}">
 							</div>
 							<div class="lableinput">
 								<label for="">Birthday</label>
-								<input type="date" placeholder="Birthday">
+								<input type="date" placeholder="Birthday" value="${user.dob}">
 							</div>
 						</div>
 						<hr>
 						<div class="rows">
 							<div class="lableinput singlerow">
 								<label for="">Address</label>
-								<input type="text" >
+								<input type="text" value="${user.address != null ? user.address : '' }">
 							</div>
 						</div>
 						<div class="rows doublerows">
 							<div class="lableinput">
 								<label for="" id="pwds">City</label>
-								<input type="text" >
+								<input type="text" value="${user.city != null ? user.city : '' }">
 							</div>
 							<div class="lableinput">
 								<label for="">Province</label>
-								<input type="text" >
+								<input type="text" value="${user.province != null ? user.province : '' }">
 							</div>
 						</div>
 						<div class="rows doublerows">
 							<div class="lableinput">
 								<label for="">Country</label>
-								<input type="text" >
+								<input type="text" value="${user.country != null ? user.country : '' }">
 							</div>
 							<div class="lableinput">
 								<label for="">Postal Code</label>
-								<input type="text" >
+								<input type="text" value="${user.postalcode != null ? user.postalcode : '' }">
 							</div>
 						</div>
 						<div class="rows">
