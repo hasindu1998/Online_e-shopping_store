@@ -10,6 +10,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
+    min-height: 80px;
 }
 
 .logo img {
@@ -48,11 +49,13 @@
     margin-right: auto;
     margin-left: auto;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .profile h4 {
     margin-top: 5px;
     color: aliceblue;
+    cursor: pointer;
 }
 
 .container2 {
@@ -80,4 +83,59 @@
 .container2 ul li a:hover {
     color: #02243F;
     transition: 0.5s;
+}
+
+.logregbtns{
+    margin-right: 15px;
+}
+
+.logregbtns button {
+    width: 105px;
+    color: aliceblue;
+    border: 3px solid #F27B12;
+    padding: 10px 25px;
+    border-radius: 5px;
+}
+
+button.registerbtn{
+    background-color: transparent;
+    color: #F27B12;
+}
+
+/*Dropdown menu*/
+.Profile_dropdown 
+{
+  position: absolute;
+  top: 87px;
+  right: 10px;
+  background-color: aliceblue;
+  border-radius: 5px;
+  transition: max-height 1s ease-out;
+  box-shadow: 0 6px 20px 0 rgba(55, 53, 53, 0.19);
+  display: none;
+  z-index: 2;
+}
+
+.dropdown_items
+{
+  display: flex;
+  flex-direction: column;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+
+.dropdown_items a 
+{
+  text-decoration: none;
+  font-size: 16px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  color: #333;
+}
+
+.dropdown_items a:hover 
+{
+  color: #F27B12;
 }
