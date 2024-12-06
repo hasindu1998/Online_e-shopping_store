@@ -45,4 +45,26 @@ public class UserDB {
 			return null;
 		}
 	}
+
+	//Register User Function
+	public static boolean registerUser(String Fname, String Lname, String username, String password, String email, String phone, String dob, String usertype, String propicUrl) {
+		try {
+			Connection con = DBconn.getConnection();
+			Statement stmt = con.createStatement();
+			String query = "INSERT INTO User (Fname, Lname, username, password, Email, mobileno, birthday, userType, profilepic_url) VALUES ('" + Fname + "', '" + Lname + "', '" + username + "', '" + password + "', '" + email + "', '" + phone + "', '" + dob + "', '" + usertype + "', '" + propicUrl + "')";
+			int success = stmt.executeUpdate(query);
+
+			if(success > 0) {
+				return true;
+			}
+			else{
+				return false;
+			}
+		}
+		catch(Exception e) {
+			System.out.println(e);
+			return false;
+		}
+		
+	}
 }

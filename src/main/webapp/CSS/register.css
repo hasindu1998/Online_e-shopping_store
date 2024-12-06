@@ -28,7 +28,7 @@
     color: #02243F;
 }
 
-.registerformcontainer p {
+.registerformcontainer p#regtext {
     margin-bottom: 30px;
     font-weight: 500;
 }
@@ -78,4 +78,10 @@
 
 .radiobtns input{
     width: 20px;
+}
+
+#error {
+    color: red;
+    text-align: center;
+    margin-top: 4%;
 }

@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html>
@@ -15,8 +16,8 @@
 	<div class="maincontainer1">
 		<div class="registerformcontainer">
 			<h2>Start Your Journey with Us!</h2>
-			<p>Register now and enjoy a smoother, smarter shopping experience.</p> 
-			<form action="${pageContext.request.contextPath}/register" method="POST">
+			<p id="regtext">Register now and enjoy a smoother, smarter shopping experience.</p> 
+			<form action="${pageContext.request.contextPath}/RegisterServlet" method="POST">
 				<div class="rows">
 					<input type="text" name="firstname" placeholder="First Name" required>
 					<input type="text" name="lastname" placeholder="Last Name" required>
@@ -38,6 +39,11 @@
 						<input type="radio" name="userType" value="seller" required> Seller
 						<input type="radio" name="userType" value="buyer"> Buyer
 				</div>
+				
+				<c:if test="${not empty RegisterError}">
+                    <p id="error">${RegisterError}</p>
+                </c:if>
+                
 				<div class="rows submitbtn">
 					<input type="submit" value="Register">
 				</div>
