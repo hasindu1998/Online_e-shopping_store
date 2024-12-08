@@ -6,7 +6,6 @@
 2. Headings - #02243F
 3. Background - #FDFDFB
 
-
 |        Page        |    By   | Status |
 |:------------------:|:-------:|--------|
 | Home               | Hasindu | Done   |
@@ -26,3 +25,6 @@
 | Privacy Policy     | Hasindu | Done   |
 
 _Todo_ - Seller Public Profile Page
+### Important
+**Update DBconn.java database link to your own one** <br>
+**Update ProPicUpdateServlet.java file save path to your own file path**
