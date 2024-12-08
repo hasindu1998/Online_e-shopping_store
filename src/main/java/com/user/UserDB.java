@@ -34,6 +34,10 @@ public class UserDB {
 
 				//create user object
 				User user = new User(id, uname, passwordd, Fname, Lname, email, phone, dob, usertype, address, city, province, country, postalcode, propicUrl);
+				
+				//close connection
+				con.close();
+				
 				return user; //return user object
 			}
 			else {
@@ -53,6 +57,9 @@ public class UserDB {
 			Statement stmt = con.createStatement();
 			String query = "INSERT INTO User (Fname, Lname, username, password, Email, mobileno, birthday, userType, profilepic_url) VALUES ('" + Fname + "', '" + Lname + "', '" + username + "', '" + password + "', '" + email + "', '" + phone + "', '" + dob + "', '" + usertype + "', '" + propicUrl + "')";
 			int success = stmt.executeUpdate(query);
+			
+			//close connection
+			con.close();
 
 			if(success > 0) {
 				return true;
@@ -97,6 +104,10 @@ public class UserDB {
 	
 						//create user object
 						User user = new User(id, uname, passwordd, Fname, Lname, email, phone, dob, usertype, address, city, province, country, postalcode, propicUrl);
+						
+						//close connection
+						con.close();
+						
 						return user; //return user object
 					}
 					else {
@@ -107,5 +118,29 @@ public class UserDB {
 				return null;
 			}
 		}
+
+	//update user details method
+	public static boolean updateUser(int userid, String Fname, String Lname, String email, String phone, String dob, String address, String city, String province, String country, String postalcode) {
+		try {
+				Connection con = DBconn.getConnection();
+				Statement stmt = con.createStatement();
+				String query = "UPDATE user SET Fname = '" + Fname + "', Lname = '" + Lname + "', Email = '" + email + "', mobileno = '" + phone + "', birthday = '" + dob + "', address = '" + address + "', city = '" + city + "', province = '" + province + "', country = '" + country + "', postal_code = '" + postalcode + "' WHERE userid = '" + userid + "'";
+				int success = stmt.executeUpdate(query);
+				
+				//close connection
+				con.close();
+	
+				if(success > 0) {
+					return true;
+				}
+				else{
+					return false;
+				}
+		}
+		catch(Exception e) {
+			System.out.println(e);
+			return false;
+		}
+	}
 	
 }

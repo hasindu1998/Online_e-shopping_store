@@ -46,59 +46,59 @@
 				</div>
 			</div>
 			<div class="rightsect">
-				<form action="#" method="POST">
+				<form action="${pageContext.request.contextPath}/updateUserServlet" method="POST">
 					<div class="rowscontainer">
 						<div class="rows doublerows">
 							<div class="lableinput">
 								<label for="">First Name</label>
-								<input type="text" value="${user.fname}">
+								<input type="text" name="fname" value="${user.fname}">
 							</div>
 							<div class="lableinput">
 								<label for="">Last Name</label>
-								<input type="text" value="${user.lname}">
+								<input type="text" name="lname" value="${user.lname}">
 							</div>
 						</div>
 						<div class="rows">
 							<div class="lableinput singlerow">
 								<label for="">Email</label>
-								<input type="text" value="${user.email}">
+								<input type="text" name="mail" value="${user.email}">
 							</div>
 						</div>
 						<div class="rows doublerows">
 							<div class="lableinput">
 								<label for="">Contact No</label>
-								<input type="tel" value="${user.phone}">
+								<input type="tel" name="telno" value="${user.phone}">
 							</div>
 							<div class="lableinput">
 								<label for="">Birthday</label>
-								<input type="date" placeholder="Birthday" value="${user.dob}">
+								<input type="date" name="bday" placeholder="Birthday" value="${user.dob}">
 							</div>
 						</div>
 						<hr>
 						<div class="rows">
 							<div class="lableinput singlerow">
 								<label for="">Address</label>
-								<input type="text" value="${user.address != null ? user.address : '' }">
+								<input type="text" name="address" value="${user.address != null ? user.address : '' }">
 							</div>
 						</div>
 						<div class="rows doublerows">
 							<div class="lableinput">
 								<label for="" id="pwds">City</label>
-								<input type="text" value="${user.city != null ? user.city : '' }">
+								<input type="text" name="city" value="${user.city != null ? user.city : '' }">
 							</div>
 							<div class="lableinput">
 								<label for="">Province</label>
-								<input type="text" value="${user.province != null ? user.province : '' }">
+								<input type="text" name="province" value="${user.province != null ? user.province : '' }">
 							</div>
 						</div>
 						<div class="rows doublerows">
 							<div class="lableinput">
 								<label for="">Country</label>
-								<input type="text" value="${user.country != null ? user.country : '' }">
+								<input type="text" name="country" value="${user.country != null ? user.country : '' }">
 							</div>
 							<div class="lableinput">
 								<label for="">Postal Code</label>
-								<input type="text" value="${user.postalcode != null ? user.postalcode : '' }">
+								<input type="text" name="postalcode" value="${user.postalcode != null ? user.postalcode : '' }">
 							</div>
 						</div>
 						<div class="rows">

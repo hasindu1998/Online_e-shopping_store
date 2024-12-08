@@ -21,6 +21,14 @@ public class myProfileServlet extends HttpServlet {
 		User user = UserDB.getUserdetails(currentUserid);
 
 		if(user != null) {
+			//capture error or success message recived after user details update
+			//String success =(String) request.getParameter("success");
+
+			//if(success != null) {
+				//request.setAttribute("success", success);   
+			//}
+
+			//set user object to request and redirect to myProfile.jsp
 			request.setAttribute("user", user);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("myProfile.jsp");
 			dispatcher.forward(request, response);
