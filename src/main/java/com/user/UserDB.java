@@ -143,4 +143,28 @@ public class UserDB {
 		}
 	}
 	
+	//update profilepic function
+	public static boolean updatePropic(int userid, String imgname) {
+		try {
+				Connection con = DBconn.getConnection();
+				Statement stmt = con.createStatement();
+				String query = "UPDATE user SET profilepic_url = '"+ imgname +"'  WHERE userid = '" + userid + "'";
+				int success = stmt.executeUpdate(query);
+				
+				//close connection
+				con.close();
+	
+				if(success > 0) {
+					return true;
+				}
+				else{
+					return false;
+			}
+	}
+	catch(Exception e) {
+			System.out.println(e);
+			return false;
+		}
+	}
+	
 }

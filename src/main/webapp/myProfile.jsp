@@ -28,8 +28,9 @@
 					<div class="profileimg">
 						<h2 class="usrname">Hello ${Fname}</h2>
 						<img src="${pageContext.request.contextPath}/Images/Profilepics/${propicUrl}" alt="Profile Picture">
-						<form action="" method="POST">
-							<input type="file" name="profilepic" id="profilepic" accept="image/*">
+						<form action="${pageContext.request.contextPath}/ProPicUpdateServlet" method="POST" enctype="multipart/form-data">
+							<input type="file" name="profilepic" id="profilepic" accept="image/*" required>
+							<input type="submit">
 						</form>
 						<div class="links">
 							<p><a href="#pwds">&#9658 Change Password</a></p>
