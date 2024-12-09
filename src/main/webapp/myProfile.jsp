@@ -39,8 +39,9 @@
 							<p><a href="#">&#9658 My Products</a></p>
 							<p><a href="#">&#9658 Logout</a></p>
 						</div>
-						<form action="#" method="POST">
-							<input class="submitbtn" id="deleteacc" type="submit" value="Delete Account">
+						<form action="${pageContext.request.contextPath}/DeleteUserServlet" method="POST">
+							<input type="hidden" name="usrid" value="${userid}">
+							<input class="submitbtn" id="deleteacc" type="submit" value="Delete Account" onclick="return confirm('Do you want to Delete Account?')">
 						</form>
 					</div>
 

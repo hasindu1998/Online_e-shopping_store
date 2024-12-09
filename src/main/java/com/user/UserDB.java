@@ -167,4 +167,29 @@ public class UserDB {
 		}
 	}
 	
+	
+	//delete user function
+	public static boolean deleteUser(int userid) {
+		try {
+				Connection con = DBconn.getConnection();
+				Statement stmt = con.createStatement();
+				String query = "DELETE FROM user WHERE userid = '" + userid + "'";
+				int success = stmt.executeUpdate(query);
+				
+				//close connection
+				con.close();
+	
+				if(success > 0) {
+					return true;
+				}
+				else{
+					return false;
+			}
+		}
+		catch(Exception e) {
+				System.out.println(e);
+				return false;
+		}
+	}
+	
 }

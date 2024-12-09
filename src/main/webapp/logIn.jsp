@@ -33,7 +33,7 @@
                         </c:if>
                         <input class="submit" type="submit" value="Login">
                     </form>
-                    <button class="regbtn" id="register">Register</button>
+                    <button class="regbtn" id="register" onclick="document.location='${pageContext.request.contextPath}/register.jsp'" >Register</button>
                 </div>
             </div>
         </div>
