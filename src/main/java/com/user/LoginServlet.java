@@ -37,6 +37,7 @@ public class LoginServlet extends HttpServlet {
 			session.setAttribute("Fname", user.getFname());
 			session.setAttribute("UserType", user.getUsertype());
 			session.setAttribute("propicUrl", user.getPropicUrl());
+			session.setAttribute("Pwd",user.getPassword());
 			
 			//filter by user type and redirect to appropriate page
 			if(user.getUsertype().equals("admin")) {

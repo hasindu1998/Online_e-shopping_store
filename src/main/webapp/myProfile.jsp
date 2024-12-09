@@ -37,7 +37,7 @@
 							<p><a href="#">&#9658 My Orders</a></p>
 							<p><a href="#">&#9658 My Cart</a></p>
 							<p><a href="#">&#9658 My Products</a></p>
-							<p><a href="#">&#9658 Logout</a></p>
+							<p><a href="${pageContext.request.contextPath}/LogoutServlet" onclick="return confirm('Do you want to log out now?')">&#9658 Logout</a></p>
 						</div>
 						<form action="${pageContext.request.contextPath}/DeleteUserServlet" method="POST">
 							<input type="hidden" name="usrid" value="${userid}">
@@ -48,6 +48,10 @@
 				</div>
 			</div>
 			<div class="rightsect">
+				 <c:if test="${not empty Error}">
+	             	<p id="error">${Error}</p>
+	             </c:if>
+	             
 				<form action="${pageContext.request.contextPath}/updateUserServlet" method="POST">
 					<div class="rowscontainer">
 						<div class="rows doublerows">
@@ -108,18 +112,18 @@
 						</div>
 					</div>
 				</form>
-				<form action="#" method="POST">
+				<form action="${pageContext.request.contextPath}/UpdatePwdServlet" method="POST">
 					<div class="rowscontainer">
 						<div class="rows singlerow">
 							<div class="lableinput">
 								<label for="">Old Password</label>
-								<input type="password" >
+								<input type="password" name="oldpwd">
 							</div>
 						</div>
 						<div class="rows singlerow">
 							<div class="lableinput">
 								<label for="">New Password</label>
-								<input type="password" >
+								<input type="password" name="newpwd">
 							</div>
 						</div>
 						<div class="rows singlerow">

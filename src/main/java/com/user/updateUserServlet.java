@@ -1,6 +1,7 @@
 package com.user;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 
 //import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -34,16 +35,12 @@ public class updateUserServlet extends HttpServlet {
 		boolean updated = UserDB.updateUser(userID, firstname, lastname, email, contactno, birthday, address, city, province, country, postalcode);
 
 		if(updated == true) {
-			//request.setAttribute("success", "Profile Updated Successfully");
-	        //RequestDispatcher dis = request.getRequestDispatcher("myProfileServlet");
-	        //dis.forward(request, response);
 			response.sendRedirect("myProfileServlet");
 		}
 		else {
-			//request.setAttribute("success", "Profile Update Failed !");
-	        //RequestDispatcher dis = request.getRequestDispatcher("myProfileServlet");
-	        //dis.forward(request, response);
-			response.sendRedirect("myProfileServlet");
+			// send error with url
+			String message = "Error when changing Details. try Again!";
+			response.sendRedirect("myProfileServlet?message=" + URLEncoder.encode(message, "UTF-8"));
 		}
 	}
 

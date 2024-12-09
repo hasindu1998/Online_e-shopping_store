@@ -21,12 +21,16 @@ public class myProfileServlet extends HttpServlet {
 		User user = UserDB.getUserdetails(currentUserid);
 
 		if(user != null) {
-			//capture error or success message recived after user details update
-			//String success =(String) request.getParameter("success");
-
-			//if(success != null) {
-				//request.setAttribute("success", success);   
-			//}
+			
+			//recive error from updatepassword servlet and update user servlet
+			String message = request.getParameter("message");
+			
+			if (message == null || message.trim().isEmpty()) {
+				//do nothing
+			}
+			else {
+				request.setAttribute("Error",message);
+			}
 
 			//set user object to request and redirect to myProfile.jsp
 			request.setAttribute("user", user);

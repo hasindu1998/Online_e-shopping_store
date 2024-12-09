@@ -168,6 +168,31 @@ public class UserDB {
 	}
 	
 	
+	//Update Password Function
+	public static boolean updatePassword(int userid, String newPwd) {
+		try {
+				Connection con = DBconn.getConnection();
+				Statement stmt = con.createStatement();
+				String query = "UPDATE user SET password ='"+newPwd+"'  WHERE userid = '" + userid + "'";
+				int success = stmt.executeUpdate(query);
+				
+				//close connection
+				con.close();
+	
+				if(success > 0) {
+					return true;
+				}
+				else{
+					return false;
+				}
+		}
+		catch(Exception e) {
+				System.out.println(e);
+				return false;
+		}
+	}
+	
+	
 	//delete user function
 	public static boolean deleteUser(int userid) {
 		try {
