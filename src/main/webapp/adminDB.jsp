@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html>
@@ -38,59 +39,41 @@
 		</div>
 		
 		<div class="users">
-			<h2>All Users <span class="count">23</span></h2>
+			<h2>All Users <span class="count">${userCount}</span></h2>
 			<div class="tablecontainer">
 				<table>
 					<tr>
-						<th class="usrname">Username</th>
+						<th class="usrname">User Name</th>
 						<th class="mail">Email</th>
 						<th class="role">Role</th>
 						<th class="action">Actions</th>
 					</tr>
-					<tr>
+					
+					<c:forEach var="user" items="${users}">
+						
+						<c:set var="fname" value="${user.fname}" />
+						<c:set var="lname" value="${user.lname}" />
+						<c:set var="id" value="${user.id}" />
+						<c:set var="email" value="${user.email}" />
+						<c:set var="usertype" value="${user.usertype}" />
+						<c:set var="propicUrl" value="${user.propicUrl}" />
+					
+						<tr>
 						<td class="namecolumn">
-							<img src="${pageContext.request.contextPath}/Images/profileicon.webp" alt="user">
-							<p>John Doe</p>
+							<img src="${pageContext.request.contextPath}/Images/Profilepics/${user.propicUrl}" alt="user">
+							<p>${user.fname} ${user.lname}</p>
 						</td>
-						<td>test@gmail.com</td>
-						<td><span class="userrole">Admin</span></td>
+						<td>${user.email}</td>
+						<td><span class="userrole">${user.usertype}</span></td>
 						<td>
-							<button class="btn">Delete</button>
+							<form action="">
+								<input type="hidden" value="${user.id}">
+								<button class="btn">Delete</button>
+							</form>
 						</td>
 					</tr>
-					<tr>
-						<td class="namecolumn">
-							<img src="${pageContext.request.contextPath}/Images/profileicon.webp" alt="user">
-							<p>Moditha Marasingha</p>
-						</td>
-						<td>test@gmail.com</td>
-						<td><span class="userrole">Buyer</span></td>
-						<td>
-							<button class="btn">Delete</button>
-						</td>
-					</tr>
-					<tr>
-						<td class="namecolumn">
-							<img src="${pageContext.request.contextPath}/Images/profileicon.webp" alt="user">
-							<p>Gimhan Kulasingha</p>
-						</td>
-						<td>test@gmail.com</td>
-						<td><span class="userrole">Seller</span></td>
-						<td>
-							<button class="btn">Delete</button>
-						</td>
-					</tr>
-					<tr>
-						<td class="namecolumn">
-							<img src="${pageContext.request.contextPath}/Images/profileicon.webp" alt="user">
-							<p>John Doe</p>
-						</td>
-						<td>test@gmail.com</td>
-						<td><span class="userrole">Admin</span></td>
-						<td>
-							<button class="btn">Delete</button>
-						</td>
-					</tr>
+					</c:forEach>
+					
 				</table>
 			</div>
 		</div>

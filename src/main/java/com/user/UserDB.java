@@ -3,6 +3,8 @@ package com.user;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserDB {
 	//Login Validation Function
@@ -215,6 +217,73 @@ public class UserDB {
 				System.out.println(e);
 				return false;
 		}
+	}
+	
+	//get all users function for admin dashboard
+	public static List<User> getallUsers() {
+		
+		ArrayList<User> user = new ArrayList<>();
+		
+		try {
+			
+				Connection con = DBconn.getConnection();
+				Statement stmt = con.createStatement();
+				String query = "SELECT * FROM user";
+	
+				ResultSet rs = stmt.executeQuery(query);
+				while(rs.next()) {
+					//retrive all user data
+					int id = rs.getInt("userid");
+					String uname = rs.getString("username");
+					String passwordd = rs.getString("password");
+					String Fname = rs.getString("Fname");
+					String Lname = rs.getString("Lname");
+					String email = rs.getString("Email");
+					String phone = rs.getString("mobileno");
+					String dob = rs.getString("birthday");
+					String usertype = rs.getString("userType");
+					String address = rs.getString("address");
+					String city = rs.getString("city");
+					String province = rs.getString("province");
+					String country = rs.getString("country");
+					String postalcode = rs.getString("postal_code");
+					String propicUrl = rs.getString("profilepic_url");
+	
+					//create user object
+					User users = new User(id, uname, passwordd, Fname, Lname, email, phone, dob, usertype, address, city, province, country, postalcode, propicUrl);
+					user.add(users);
+				}
+				
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return user; // return user list
+		
+	}
+	
+	
+	// Count Users
+	public static int userCount() {
+		
+		try {
+			Connection con = DBconn.getConnection();
+			Statement stmt = con.createStatement();
+			String query = "SELECT COUNT(userid) AS UserCount FROM User";
+			
+			ResultSet rs = stmt.executeQuery(query);
+			
+			if(rs.next()) {
+				int usercount = rs.getInt("UserCount");
+				return usercount;
+			}
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return 0;
 	}
 	
 }

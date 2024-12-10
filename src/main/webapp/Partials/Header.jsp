@@ -37,6 +37,17 @@
 				    <div class="Profile_dropdown" id="prof_dropdown">
 				        <div class="dropdown_items">
 				            <a href="${pageContext.request.contextPath}/myProfileServlet">My Profile</a>
+				            
+				            <c:if test="${UserType == 'admin'}">
+				            	<a href="${pageContext.request.contextPath}/AdminDashboardServlet">Admin Panel</a>
+				            </c:if>
+				            <c:if test="${UserType == 'seller'}">
+				            	<a href="${pageContext.request.contextPath}">Seller Panel</a>
+				            </c:if>
+				            <c:if test="${UserType == 'buyer'}">
+				            	<a href="${pageContext.request.contextPath}">My Orders</a>
+				            </c:if>
+				            
 				            <a onclick="return confirm('Do you want to log out now?')" href="${pageContext.request.contextPath}/LogoutServlet">Log Out</a>
 				        </div>
 				    </div>
