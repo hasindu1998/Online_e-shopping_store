@@ -41,6 +41,7 @@
 						</div>
 						<form action="${pageContext.request.contextPath}/DeleteUserServlet" method="POST">
 							<input type="hidden" name="usrid" value="${userid}">
+							<input type="hidden" name="from" value="myprofile">
 							<input class="submitbtn" id="deleteacc" type="submit" value="Delete Account" onclick="return confirm('Do you want to Delete Account?')">
 						</form>
 					</div>

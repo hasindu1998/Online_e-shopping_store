@@ -66,9 +66,10 @@
 						<td>${user.email}</td>
 						<td><span class="userrole">${user.usertype}</span></td>
 						<td>
-							<form action="">
-								<input type="hidden" value="${user.id}">
-								<button class="btn">Delete</button>
+							<form action="${pageContext.request.contextPath}/DeleteUserServlet" method="POST">
+								<input type="hidden" name="usrid" value="${user.id}">
+								<input type="hidden" name="from" value="admindb">
+								<button class="btn" onclick="return confirm('Do you want to Delete this Account?')">Delete</button>
 							</form>
 						</td>
 					</tr>

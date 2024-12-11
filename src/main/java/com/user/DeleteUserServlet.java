@@ -16,18 +16,37 @@ public class DeleteUserServlet extends HttpServlet {
 		String Userid = request.getParameter("usrid");
 		int iD = Integer.parseInt(Userid);
 		
-		try {
-			boolean success = UserDB.deleteUser(iD);
-			
-			if(success) {
-				response.sendRedirect("LogoutServlet");
+		String from =(String) request.getParameter("from");
+		
+		if(from.equals("myprofile")) {
+			try {
+				boolean success = UserDB.deleteUser(iD);
+				
+				if(success) {
+					response.sendRedirect("LogoutServlet");
+				}
+				else {
+					response.sendRedirect("myProfileServlet");
+				}
 			}
-			else {
-				response.sendRedirect("myProfileServlet");
+			catch(Exception e) {
+				e.printStackTrace();
 			}
 		}
-		catch(Exception e) {
-			e.printStackTrace();
+		else if(from.equals("admindb")) {
+			try {
+				boolean success = UserDB.deleteUser(iD);
+				
+				if(success) {
+					response.sendRedirect("AdminDashboardServlet");
+				}
+				else {
+					response.sendRedirect("AdminDashboardServlet");
+				}
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+			}
 		}	
 		
 	}
