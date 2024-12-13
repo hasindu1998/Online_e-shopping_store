@@ -41,7 +41,7 @@ public class LoginServlet extends HttpServlet {
 			
 			//filter by user type and redirect to appropriate page
 			if(user.getUsertype().equals("admin")) {
-				response.sendRedirect("index.jsp"); // change later
+				response.sendRedirect("AdminDashboardServlet");
 			}
 			else if(user.getUsertype().equals("seller")) {
 				response.sendRedirect("index.jsp"); // change later

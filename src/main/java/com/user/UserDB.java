@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDB {
+	
 	//Login Validation Function
 	public static User isValidUser(String username, String password) {
-		
 		try {
 			Connection con = DBconn.getConnection();
 			Statement stmt = con.createStatement();
@@ -264,7 +264,7 @@ public class UserDB {
 	}
 	
 	
-	// Count Users
+	// Count Users for admin dashboard
 	public static int userCount() {
 		
 		try {

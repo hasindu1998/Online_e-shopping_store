@@ -23,10 +23,10 @@
 | My Orders Page     | Hasindu | Done            |                |
 | My Products Page   | Hasindu | Done            |                |
 | Product Order Page | Moditha | Done            |                |
-| About Us Page      | Moditha | Done            |                |
-| Privacy Policy     | Hasindu | Done            |                |
+| About Us Page      | Moditha | Done            | N/A            |
+| Privacy Policy     | Hasindu | Done            | N/A            |
 
 _Todo_ - Seller Public Profile Page
 ### Important
-**Update DBconn.java database link to your own one** <br>
+**Update DBconn.java database link to your own link** <br>
 **Update ProPicUpdateServlet.java file save path to your own file path**
