@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,12 +21,12 @@
     <div class="my-products-container">
         <div class="manage-my-products-container">
             <div class="add-products-container">
-                <form action="#" method="post" enctype="multipart/form-data">
+                <form action="${pageContext.request.contextPath}/AddProductServlet" method="post" enctype="multipart/form-data">
                     <h3 class="add-product-topic">Add Product</h3>
                     <div class="input-rows">
                         <input type="text" class="product-name input-details" placeholder="Product Name" name="productTitle"><br>
-                        <input type="number" class="price input-details" placeholder="Price" name="price">
-                        <input type="number" class="quantity input-details" placeholder="Quantity" name="quantity"><br>
+                        <input type="text" class="price input-details" placeholder="Price" name="price">
+                        <input type="text" class="quantity input-details" placeholder="Quantity" name="quantity"><br>
                         <label class="category input-details">Category</label>
                         <select name="category" class="input-details">
                             <option value="Electronics">Electronics</option>

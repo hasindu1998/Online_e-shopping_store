@@ -1,6 +1,7 @@
 package com.product;
 
 import java.io.IOException;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,6 +21,19 @@ public class AddProductServlet extends HttpServlet {
 		String productCategory = request.getParameter("category");
 		String productImage = request.getParameter("productImage");
 		String productDescription = request.getParameter("description");
+		
+		boolean isTrue;
+		
+		isTrue = ProductDB.addProduct(produtName, productPrice, productQuantity, productCategory, productImage, productDescription);
+		
+		if(isTrue == true) {
+			response.sendRedirect("myProducts.jsp");
+		}else {
+			request.setAttribute("RegisterError", "Registration Failed");
+	        RequestDispatcher dis = request.getRequestDispatcher("myProducts.jsp");
+	        dis.forward(request, response);
+		}
+		
 	}
 
 }
