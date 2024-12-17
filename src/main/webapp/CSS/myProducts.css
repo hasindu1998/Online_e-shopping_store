@@ -85,6 +85,15 @@
 
 .submit-button{
     font-weight: 600px;
+    background-color: #F27B12;
+    font-size: 15px;
+    border-radius: 12px;
+	color: white;
+	padding: 10px 20px;
+	cursor: pointer;
+    border-style: none;
+	font-weight: 500;
+	transition: 0.6s opacity;
 }
 
 table{

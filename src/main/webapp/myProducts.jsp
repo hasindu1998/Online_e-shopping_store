@@ -24,7 +24,7 @@
                 <form action="#" method="post" enctype="multipart/form-data">
                     <h3 class="add-product-topic">Add Product</h3>
                     <div class="input-rows">
-                        <input type="text" class="product-name input-details" placeholder="Product Name" name="roductTitle"><br>
+                        <input type="text" class="product-name input-details" placeholder="Product Name" name="productTitle"><br>
                         <input type="number" class="price input-details" placeholder="Price" name="price">
                         <input type="number" class="quantity input-details" placeholder="Quantity" name="quantity"><br>
                         <label class="category input-details">Category</label>
@@ -36,10 +36,14 @@
                             <option value="Stationary">Stationary</option>
                             <option value="Fashion">Fashion</option>
                         </select><br>
-                        <input type="file" class="add-image input-details"><br>
-                        <textarea name="" class="input-details" cols="55" rows="7"></textarea>
+                        <input type="file" class="add-image input-details" name="productImage"><br>
+                        <textarea name="description" class="input-details" cols="55" rows="7"></textarea>
+                        
+                        <c:if test="${not empty RegisterError}">
+                    		<p id="error">${RegisterError}</p>
+                		</c:if>
                     </div>
-                    <div class="submit-button-container"><input type="Submit" value="add-product" class="submit-button"></div>
+                    <div class="submit-button-container"><input type="submit" value="Submit" class="submit-button"></div>
                 </form>
             </div>
             <div class="product-table-container">
