@@ -21,12 +21,12 @@
     <div class="my-products-container">
         <div class="manage-my-products-container">
             <div class="add-products-container">
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="#" method="post" enctype="multipart/form-data">
                     <h3 class="add-product-topic">Add Product</h3>
                     <div class="input-rows">
-                        <input type="text" class="product-name input-details" placeholder="Product Name"><br>
-                        <input type="number" class="price input-details" placeholder="Price">
-                        <input type="number" class="quantity input-details" placeholder="Quantity"><br>
+                        <input type="text" class="product-name input-details" placeholder="Product Name" name="roductTitle"><br>
+                        <input type="number" class="price input-details" placeholder="Price" name="price">
+                        <input type="number" class="quantity input-details" placeholder="Quantity" name="quantity"><br>
                         <label class="category input-details">Category</label>
                         <select name="category" class="input-details">
                             <option value="Electronics">Electronics</option>
@@ -39,7 +39,7 @@
                         <input type="file" class="add-image input-details"><br>
                         <textarea name="" class="input-details" cols="55" rows="7"></textarea>
                     </div>
-                    <div class="submit-button-container"><button class="submit-button">Submit</button></div>
+                    <div class="submit-button-container"><input type="Submit" value="add-product" class="submit-button"></div>
                 </form>
             </div>
             <div class="product-table-container">
