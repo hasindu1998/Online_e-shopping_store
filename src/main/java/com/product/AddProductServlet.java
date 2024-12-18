@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 @WebServlet("/AddProductServlet")
@@ -22,9 +23,12 @@ public class AddProductServlet extends HttpServlet {
 		String productImage = request.getParameter("productImage");
 		String productDescription = request.getParameter("description");
 		
+		HttpSession session = request.getSession();
+		int userid = (int) session.getAttribute("userid");
+		
 		boolean isTrue;
 		
-		isTrue = ProductDB.addProduct(produtName, productPrice, productQuantity, productCategory, productImage, productDescription);
+		isTrue = ProductDB.addProduct(produtName, productPrice, productQuantity, productCategory, productImage, productDescription, userid);
 		
 		if(isTrue == true) {
 			response.sendRedirect("myProducts.jsp");

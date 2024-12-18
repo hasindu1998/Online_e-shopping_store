@@ -7,7 +7,7 @@ import com.user.DBconn;
 
 public class ProductDB {
 	
-	public static boolean addProduct(String name, String price, String quantity, String category, String image, String description) {
+	public static boolean addProduct(String name, String price, String quantity, String category, String image, String description, int userID) {
 		
 		boolean isSuccess = false;
 		
@@ -20,7 +20,7 @@ public class ProductDB {
 			
 			Connection con = DBconn.getConnection();
 			Statement stmt = con.createStatement();
-			String sql = "INSERT INTO product (product_name, price, qty_available, category, description, productimg) VALUES ('"+name+"', '"+price+"', '"+quantity+"', '"+category+"', '"+description+"', '"+image+"')";
+			String sql = "INSERT INTO product (product_name, price, qty_available, category, description, productimg, sellerId) VALUES ('"+name+"', '"+price+"', '"+quantity+"', '"+category+"', '"+description+"', '"+image+"', '"+userID+"')";
 			int rs = stmt.executeUpdate(sql);
 			
 			if(rs > 0) {

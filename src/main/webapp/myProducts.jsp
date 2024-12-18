@@ -21,7 +21,7 @@
     <div class="my-products-container">
         <div class="manage-my-products-container">
             <div class="add-products-container">
-                <form action="${pageContext.request.contextPath}/AddProductServlet" method="post" enctype="multipart/form-data">
+                <form action="${pageContext.request.contextPath}/AddProductServlet" method="post">
                     <h3 class="add-product-topic">Add Product</h3>
                     <div class="input-rows">
                         <input type="text" class="product-name input-details" placeholder="Product Name" name="productTitle"><br>
