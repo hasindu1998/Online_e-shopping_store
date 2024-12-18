@@ -1,7 +1,10 @@
 package com.product;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.user.DBconn;
 
@@ -11,12 +14,8 @@ public class ProductDB {
 		
 		boolean isSuccess = false;
 		
-		String url = "jdbc:mysql://localhost:3306/ecommerce_web"; // add DB name to end **(Meka edit karala commit karanna epa mta massage ekk dnna)**
-		String username = "root";
-		String pwd = "@Hasindu1998";
 		
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
 			
 			Connection con = DBconn.getConnection();
 			Statement stmt = con.createStatement();
@@ -34,5 +33,43 @@ public class ProductDB {
 		}
 		
 		return isSuccess;
+	}
+	
+	
+	//get product details of the seller
+	public static List<Product> getPeroductDetails(String sellerId){
+		
+		int newSellerId = Integer.parseInt(sellerId);
+		
+		ArrayList<Product> products = new ArrayList<>();
+		
+		try {
+			Connection con = DBconn.getConnection();
+			Statement stmt = con.createStatement();
+			String sql = "SELECT * FROM product WHERE sellerId = '"+sellerId+"'";
+			ResultSet rs = stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				int Id = rs.getInt(1);
+				String productTitle = rs.getString(2);
+				String productPrice = rs.getString(3);
+				String productQuantity = rs.getString(4);
+				String productCategory = rs.getString(5);
+				String productDescription = rs.getString(6);
+				String productImage = rs.getString(7);
+				
+				
+				Product product = new Product(Id, productTitle, productPrice, productQuantity, productDescription,productCategory, productImage, newSellerId );
+				products.add(product);
+				
+			}
+			
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return products;
+		
 	}
 }

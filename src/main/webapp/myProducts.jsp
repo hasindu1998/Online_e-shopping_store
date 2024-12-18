@@ -58,70 +58,22 @@
                         <th>Delete</th>
                     </tr>
 
-                    <tr>
-                        <td>001</td>
-                        <td>Iphone 16 pro max</td>
-                        <td>Electronics</td>
-                        <td>20</td>
-                        <td>400000.00</td>
-                        <td><button class="edit">Edit</button></td>
-                        <td><button class="delete">Delete</button></td>
-                    </tr>
+					<c:foreach var="products" items="${productDetails }">
+					
+					${product.id }
+					${product.productName }
+					${product.productCategory }
+					${product.productQuantity }
+					${product.productPrice }
+					
+					
+					</c:foreach>
                     
-                    <tr>
-                        <td>002</td>
-                        <td>Iphone 16 pro max</td>
-                        <td>Electronics</td>
-                        <td>20</td>
-                        <td>400000.00</td>
-                        <td><button class="edit">Edit</button></td>
-                        <td><button class="delete">Delete</button></td>
-                    </tr>
-                    <tr>
-                        <td>003</td>
-                        <td>Iphone 16 pro max</td>
-                        <td>Electronics</td>
-                        <td>20</td>
-                        <td>400000.00</td>
-                        <td><button class="edit">Edit</button></td>
-                        <td><button class="delete">Delete</button></td>
-                    </tr>
-                    <tr>
-                        <td>004</td>
-                        <td>Iphone 16 pro max</td>
-                        <td>Electronics</td>
-                        <td>20</td>
-                        <td>400000.00</td>
-                        <td><button class="edit">Edit</button></td>
-                        <td><button class="delete">Delete</button></td>
-                    </tr>
-                    <tr>
-                        <td>005</td>
-                        <td>Iphone 16 pro max</td>
-                        <td>Electronics</td>
-                        <td>20</td>
-                        <td>400000.00</td>
-                        <td><button class="edit">Edit</button></td>
-                        <td><button class="delete">Delete</button></td>
-                    </tr>
-                    <tr>
-                        <td>006</td>
-                        <td>Iphone 16 pro max</td>
-                        <td>Electronics</td>
-                        <td>20</td>
-                        <td>400000.00</td>
-                        <td><button class="edit">Edit</button></td>
-                        <td><button class="delete">Delete</button></td>
-                    </tr>
-                    <tr>
-                        <td>007</td>
-                        <td>Iphone 16 pro max</td>
-                        <td>Electronics</td>
-                        <td>20</td>
-                        <td>400000.00</td>
-                        <td><button class="edit">Edit</button></td>
-                        <td><button class="delete">Delete</button></td>
-                    </tr>
+                        <!-- 	<td><button class="edit">Edit</button></td>
+                        		<td><button class="delete">Delete</button></td> 
+                        		-->
+                        
+                        
                 </table>
             </div>
         </div>
