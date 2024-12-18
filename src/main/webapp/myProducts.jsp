@@ -61,12 +61,18 @@
 
 					<c:forEach var="product" items="${productDetails}">
 					
-					${product.id}  //me tika waradi me id,product name kiyn variable product class eke thiyn variable names wenna ona.
-					${product.productName}
+						<c:set var="id" value="${product.id}" />
+						<c:set var="productTitle" value="${product.productTitle}" />
+						<c:set var="productCategory" value="${product.productCategory}" />
+						<c:set var="productQuantity" value="${product.productQuantity}" />
+						<c:set var="productPrice" value="${product.productPrice}" />
+					
+					${product.id}
+					${product.productTitle}
 					${product.productCategory}
 					${product.productQuantity}
 					${product.productPrice}
-					
+				
 					
 					</c:forEach>
                     

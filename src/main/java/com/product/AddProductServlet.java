@@ -31,10 +31,10 @@ public class AddProductServlet extends HttpServlet {
 		isTrue = ProductDB.addProduct(produtName, productPrice, productQuantity, productCategory, productImage, productDescription, userid);
 		
 		if(isTrue == true) {
-			response.sendRedirect("myProducts.jsp");
+			response.sendRedirect("myProductsServlet"); //if success redirect to myProductsServlet
 		}else {
 			request.setAttribute("RegisterError", "Registration Failed");
-	        RequestDispatcher dis = request.getRequestDispatcher("myProducts.jsp");
+	        RequestDispatcher dis = request.getRequestDispatcher("myProductsServlet");
 	        dis.forward(request, response);
 		}
 		

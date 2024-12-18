@@ -37,10 +37,9 @@ public class ProductDB {
 	
 	
 	//get product details of the seller
-	public static List<Product> getPeroductDetails(String sellerId){
+	public static List<Product> getPeroductDetails(int sellerId){
 		
-		int newSellerId = Integer.parseInt(sellerId);
-		
+		int newSellerId = sellerId;
 		ArrayList<Product> products = new ArrayList<>();
 		
 		try {

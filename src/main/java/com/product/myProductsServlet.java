@@ -19,20 +19,28 @@ public class myProductsServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession session = request.getSession();
-		String currentUserid =(String) session.getAttribute("userid"); // get session user id
+		int currentUserid = (int) session.getAttribute("userid"); // get session user id
+		String userType = (String) session.getAttribute("UserType"); //get logged in user type
 		
-		try {
-			List<Product> productDetails = ProductDB.getPeroductDetails(currentUserid);
-			request.setAttribute("productDetails", productDetails);
-		
+		if(userType == null) {
+			response.sendRedirect("index.jsp"); //if not logged in
+		}
+		else if(userType.equals("seller")) {
+			try {
+				List<Product> productDetails = ProductDB.getPeroductDetails(currentUserid);
+				request.setAttribute("productDetails", productDetails);
+			}
+			catch(Exception e){
+				e.printStackTrace();
+			}
+			
+			RequestDispatcher dis = request.getRequestDispatcher("myProducts.jsp");
+			dis.forward(request, response);
+		}
+		else {
+			response.sendRedirect("index.jsp"); //if not a seller
 		}
 		
-		catch(Exception e){
-			e.printStackTrace();
-		}
-		
-		RequestDispatcher dis = request.getRequestDispatcher("myProducts.jsp");
-		dis.forward(request, response);
 		
 	}
 
