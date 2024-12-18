@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,16 +59,16 @@
                         <th>Delete</th>
                     </tr>
 
-					<c:foreach var="products" items="${productDetails }">
+					<c:forEach var="product" items="${productDetails}">
 					
-					${product.id }
-					${product.productName }
-					${product.productCategory }
-					${product.productQuantity }
-					${product.productPrice }
+					${product.id}  //me tika waradi me id,product name kiyn variable product class eke thiyn variable names wenna ona.
+					${product.productName}
+					${product.productCategory}
+					${product.productQuantity}
+					${product.productPrice}
 					
 					
-					</c:foreach>
+					</c:forEach>
                     
                         <!-- 	<td><button class="edit">Edit</button></td>
                         		<td><button class="delete">Delete</button></td> 
