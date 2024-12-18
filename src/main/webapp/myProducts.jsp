@@ -60,26 +60,17 @@
                     </tr>
 
 					<c:forEach var="product" items="${productDetails}">
-					
-						<c:set var="id" value="${product.id}" />
-						<c:set var="productTitle" value="${product.productTitle}" />
-						<c:set var="productCategory" value="${product.productCategory}" />
-						<c:set var="productQuantity" value="${product.productQuantity}" />
-						<c:set var="productPrice" value="${product.productPrice}" />
-					
-					${product.id}
-					${product.productTitle}
-					${product.productCategory}
-					${product.productQuantity}
-					${product.productPrice}
-				
+						<tr>
+							<td><c:set var="id" value="${product.id}" /></td>
+							<td><c:set var="productTitle" value="${product.productTitle}" /></td>
+							<td><c:set var="productCategory" value="${product.productCategory}" /></td>
+							<td><c:set var="productQuantity" value="${product.productQuantity}" /></td>
+							<td><c:set var="productPrice" value="${product.productPrice}" /></td>
+							<td><button class="edit">Edit</button></td>
+                        	<td><button class="delete">Delete</button></td>
+						</tr>
 					
 					</c:forEach>
-                    
-                        <!-- 	<td><button class="edit">Edit</button></td>
-                        		<td><button class="delete">Delete</button></td> 
-                        		-->
-                        
                         
                 </table>
             </div>
