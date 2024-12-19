@@ -72,8 +72,17 @@
 						<td>${product.productCategory}</td>
 						<td>${product.productQuantity}</td>
 						<td>${product.productPrice}</td>
-						<td><button class="edit">Edit</button></td>
-                        <td><button class="delete">Delete</button></td>
+						<td>
+							<form action="#" method="post">
+								<input type="button" class="edit" name="edit" value="Edit">
+							</form>
+						</td>
+	                   	<td>
+	                   		<form action="${pageContext.request.contextPath}/deleteProductServlet" method="post">
+	                   			<input type="button" class="delete" name="delete" value="Delete" >
+	                   		</form>
+	                   	</td>
+	                    
 					</tr>
 					
 					</c:forEach>

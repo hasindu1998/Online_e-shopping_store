@@ -49,7 +49,7 @@ public class ProductDB {
 			ResultSet rs = stmt.executeQuery(sql);
 			
 			while(rs.next()) {
-				int Id = rs.getInt(1);
+				int productId = rs.getInt(1);
 				String productTitle = rs.getString(2);
 				String productPrice = rs.getString(3);
 				String productQuantity = rs.getString(4);
@@ -58,7 +58,7 @@ public class ProductDB {
 				String productImage = rs.getString(7);
 				
 				
-				Product product = new Product(Id, productTitle, productPrice, productQuantity, productDescription,productCategory, productImage, newSellerId);
+				Product product = new Product(productId, productTitle, productPrice, productQuantity, productDescription,productCategory, productImage, newSellerId);
 				products.add(product);
 			}
 			
@@ -68,6 +68,32 @@ public class ProductDB {
 		}
 		
 		return products;
+		
+	}
+	
+	//Delete product function
+	public static boolean deleteProduct(int Id) {
+		
+		
+		try {
+			Connection con = DBconn.getConnection();
+			Statement stmt = con.createStatement();
+			String sql = "DELETE FROM product WHERE productid = '"+Id+"'";
+			int success = stmt.executeUpdate(sql);
+			
+			con.close();
+			
+			if(success > 0) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			return false;
+		}
 		
 	}
 }

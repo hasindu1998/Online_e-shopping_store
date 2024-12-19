@@ -1,7 +1,7 @@
 package com.product;
 
 public class Product {
-	private int id;
+	private int productId;
 	private String productTitle;
 	private String productPrice;
 	private String productQuantity;
@@ -11,9 +11,9 @@ public class Product {
 	private int sellerId;
 	
 	
-	public Product(int id, String productTitle, String productPrice, String productQuantity, String productCategory,
+	public Product(int productId, String productTitle, String productPrice, String productQuantity, String productCategory,
 			String productDescription, String productImage, int sellerId) {
-		this.id = id;
+		this.productId = productId;
 		this.productTitle = productTitle;
 		this.productPrice = productPrice;
 		this.productQuantity = productQuantity;
@@ -24,7 +24,7 @@ public class Product {
 	}
 
 	public int getId() {
-		return id;
+		return productId;
 	}
 
 	public String getProductTitle() {
