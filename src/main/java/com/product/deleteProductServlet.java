@@ -17,7 +17,7 @@ public class deleteProductServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String proId = request.getParameter("Id");
+		String proId = request.getParameter("prodid");
 		int convertedId = Integer.parseInt(proId);
 		
 		boolean isTrue;

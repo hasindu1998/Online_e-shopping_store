@@ -61,13 +61,13 @@
 
 					<c:forEach var="product" items="${productDetails}">
 						
-							<c:set var="id" value="${product.id}" />
+							<c:set var="productId" value="${product.productId}" />
 							<c:set var="productTitle" value="${product.productTitle}" />
 							<c:set var="productCategory" value="${product.productCategory}" />
 							<c:set var="productQuantity" value="${product.productQuantity}" />
 							<c:set var="productPrice" value="${product.productPrice}" />
 					<tr>
-						<td>${product.id}</td>
+						<td>${product.productId}</td>
 						<td>${product.productTitle}</td>
 						<td>${product.productCategory}</td>
 						<td>${product.productQuantity}</td>
@@ -79,7 +79,8 @@
 						</td>
 	                   	<td>
 	                   		<form action="${pageContext.request.contextPath}/deleteProductServlet" method="post">
-	                   			<input type="button" class="delete" name="delete" value="Delete" >
+	                   			<input type="hidden" value="${product.productId}" name="prodid">
+	                   			<input type="button" class="delete" name="delete" value="Delete">
 	                   		</form>
 	                   	</td>
 	                    
