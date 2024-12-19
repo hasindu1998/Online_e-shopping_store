@@ -58,7 +58,7 @@ public class ProductDB {
 				String productImage = rs.getString(7);
 				
 				
-				Product product = new Product(productId, productTitle, productPrice, productQuantity, productDescription,productCategory, productImage, newSellerId);
+				Product product = new Product(productId, productTitle, productPrice, productQuantity,productCategory,productDescription, productImage, newSellerId);
 				products.add(product);
 			}
 			
