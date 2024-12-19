@@ -37,7 +37,7 @@ public class ProductDB {
 	
 	
 	//get product details of the seller
-	public static List<Product> getPeroductDetails(int sellerId){
+	public static List<Product> getProductDetails(int sellerId){
 		
 		int newSellerId = sellerId;
 		ArrayList<Product> products = new ArrayList<>();
@@ -96,4 +96,7 @@ public class ProductDB {
 		}
 		
 	}
+	
+	//get all product details
+	
 }

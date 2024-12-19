@@ -27,7 +27,7 @@ public class myProductsServlet extends HttpServlet {
 		}
 		else if(userType.equals("seller")) {
 			try {
-				List<Product> productDetails = ProductDB.getPeroductDetails(currentUserid);
+				List<Product> productDetails = ProductDB.getProductDetails(currentUserid);
 				request.setAttribute("productDetails", productDetails);
 			}
 			catch(Exception e){
