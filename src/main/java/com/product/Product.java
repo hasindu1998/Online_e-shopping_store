@@ -23,7 +23,7 @@ public class Product {
 		this.sellerId = sellerId;
 	}
 
-	public int getId() {
+	public int getProductId() {
 		return productId;
 	}
 

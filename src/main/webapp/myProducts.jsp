@@ -80,7 +80,7 @@
 	                   	<td>
 	                   		<form action="${pageContext.request.contextPath}/deleteProductServlet" method="post">
 	                   			<input type="hidden" value="${product.productId}" name="prodid">
-	                   			<input type="button" class="delete" name="delete" value="Delete">
+	                   			<input type="submit" class="delete" name="delete" value="Delete">
 	                   		</form>
 	                   	</td>
 	                    

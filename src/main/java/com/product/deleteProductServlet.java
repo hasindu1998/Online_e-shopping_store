@@ -26,10 +26,10 @@ public class deleteProductServlet extends HttpServlet {
 		
 		try {
 			if(isTrue == true) {
-				response.sendRedirect("myProductServlet");
+				response.sendRedirect("myProductsServlet");
 			}
 			else {
-				response.sendRedirect("myProductServlet");
+				response.sendRedirect("myProductsServlet");
 			}
 			
 		}
