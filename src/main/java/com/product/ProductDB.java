@@ -97,6 +97,61 @@ public class ProductDB {
 		
 	}
 	
-	//get all product details
+	
+	//get all product details for admin dashboard
+	public static List<Product> getAllProducts(){
+		
+		ArrayList<Product> products = new ArrayList<>();
+		
+		try {
+			Connection con = DBconn.getConnection();
+			Statement stmt = con.createStatement();
+			String query = "SELECT p.productid, p.product_name, p.price, p.qty_available, p.category, p.sellerId, u.Fname AS description ,u.Lname AS productimg FROM Product p JOIN User u ON  p.sellerId = u.userid;";
+			ResultSet rs = stmt.executeQuery(query);
+			
+			while(rs.next()) {
+				int productId = rs.getInt("productid");
+				String productTitle = rs.getString("product_name");
+				String productPrice = rs.getString("price");
+				String productQuantity = rs.getString("qty_available");
+				String productCategory = rs.getString("category");
+				String productDescription = rs.getString("description");
+				String productImage = rs.getString("productimg");
+				int sellerId = rs.getInt("sellerId");
+				
+				Product product = new Product(productId, productTitle, productPrice, productQuantity,productCategory,productDescription, productImage, sellerId);
+				products.add(product);
+			}
+			
+			return products;
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+		
+	}
+	
+	
+	//get products count for admindb
+	public static int getproductCount() {
+		try {
+			Connection con = DBconn.getConnection();
+			Statement stmt = con.createStatement();
+			String query = "SELECT COUNT(productid) AS productCount FROM Product";
+			
+			ResultSet rs = stmt.executeQuery(query);
+			
+			if(rs.next()) {
+				int productCount = rs.getInt("productCount");
+				return productCount;
+			}
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
 	
 }

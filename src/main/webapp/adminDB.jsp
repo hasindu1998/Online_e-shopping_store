@@ -24,7 +24,7 @@
 
 			<div class="stats-content">
 				<h3 class="stats-topic">Total Listed Items</h3>
-				<div class="stats-amount">220</div>
+				<div class="stats-amount">${productCount}</div>
 			</div>
 
 			<div class="stats-content">
@@ -126,7 +126,7 @@
 		</div>
 
 		<div class="users">
-			<h2>Products <span class="count">200</span></h2>
+			<h2>Products <span class="count">${productCount}</span></h2>
 			<div class="tablecontainer">
 				<table>
 					<tr>
@@ -136,46 +136,38 @@
 						<th>Seller</th>
 						<th>Actions</th>
 					</tr>
-					<tr>
-						<td>I Phone 12pro max</td>
-						<td>Rs. 250000.00</td>
-						<td>10</td>
-						<td>Moditha Marasingha</td>
-						<td>
-							<button class="btn editbtn">Edit</button>
-							<button class="btn">Delete</button>
-						</td>
-					</tr>
-					<tr>
-						<td>I Phone 12pro max</td>
-						<td>Rs. 250000.00</td>
-						<td>10</td>
-						<td>Moditha Marasingha</td>
-						<td>
-							<button class="btn editbtn">Edit</button>
-							<button class="btn">Delete</button>
-						</td>
-					</tr>
-					<tr>
-						<td>I Phone 12pro max</td>
-						<td>Rs. 250000.00</td>
-						<td>10</td>
-						<td>Moditha Marasingha</td>
-						<td>
-							<button class="btn editbtn">Edit</button>
-							<button class="btn">Delete</button>
-						</td>
-					</tr>
-					<tr>
-						<td>I Phone 12pro max</td>
-						<td>Rs. 250000.00</td>
-						<td>10</td>
-						<td>Moditha Marasingha</td>
-						<td>
-							<button class="btn editbtn">Edit</button>
-							<button class="btn">Delete</button>
-						</td>
-					</tr>
+					
+					<c:forEach var="product" items="${products}">
+						
+						<c:set var="productId" value="${product.productId}" />
+						<c:set var="productTitle" value="${product.productTitle}" />
+						<c:set var="productPrice" value="${product.productPrice}" />
+						<c:set var="productQuantity" value="${product.productQuantity}" />
+						<c:set var="productDescription" value="${product.productDescription}" />
+						<c:set var="productImage" value="${product.productImage}" />
+						<c:set var="sellerId" value="${product.sellerId}" />
+						
+						<tr>
+							<td>${product.productTitle}</td>
+							<td>${product.productPrice}</td>
+							<td>${product.productQuantity}</td>
+							<td>${product.productDescription} ${product.productImage}</td>
+							<td>
+								<div class="prodactions">
+									<form action="#" method="POST">
+										<button class="btn editbtn">Edit</button>
+									</form>
+									<form method="POST" action="${pageContext.request.contextPath}/deleteProductServlet">
+										<input type="hidden" name="prodid" value="${product.productId}">
+										<input type="hidden" name="admindb" value="admindb">
+										<button class="btn" onclick="return confirm('Do you want to Delete this Product?')">Delete</button>
+									</form>
+								</div>
+							</td>
+						</tr>
+					
+					</c:forEach>
+					
 				</table>
 			</div>
 		</div>

@@ -19,17 +19,28 @@ public class deleteProductServlet extends HttpServlet {
 		
 		String proId = request.getParameter("prodid");
 		int convertedId = Integer.parseInt(proId);
+		String from = request.getParameter("admindb");
 		
 		boolean isTrue;
 		
 		isTrue = ProductDB.deleteProduct(convertedId);
 		
 		try {
-			if(isTrue == true) {
-				response.sendRedirect("myProductsServlet");
+			if("admindb".equals(from)) {
+				if(isTrue == true) {
+					response.sendRedirect("AdminDashboardServlet");
+				}
+				else {
+					response.sendRedirect("AdminDashboardServlet");
+				}
 			}
 			else {
-				response.sendRedirect("myProductsServlet");
+				if(isTrue == true) {
+					response.sendRedirect("myProductsServlet");
+				}
+				else {
+					response.sendRedirect("myProductsServlet");
+				}
 			}
 			
 		}

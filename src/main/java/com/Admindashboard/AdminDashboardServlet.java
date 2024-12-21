@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.product.Product;
+import com.product.ProductDB;
 import com.user.User;
 import com.user.UserDB;
 
@@ -31,12 +33,17 @@ public class AdminDashboardServlet extends HttpServlet {
 			
 			// retrive values
 			List<User> users = UserDB.getallUsers(); //get all users for all users table
+			List<Product> products = ProductDB.getAllProducts(); //get all products from product table
 			int userCount = (int) UserDB.userCount();
+			int productCount = (int) ProductDB.getproductCount();
 			
 			
 			//send values to frontend
 			request.setAttribute("users", users);
+			request.setAttribute("products", products);
 			request.setAttribute("userCount", userCount);
+			request.setAttribute("productCount", productCount);
+			
 			
 			//forward to admin dashboard
 			RequestDispatcher dispatcher = request.getRequestDispatcher("adminDB.jsp");
