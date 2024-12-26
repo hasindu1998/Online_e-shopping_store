@@ -89,3 +89,7 @@
 .copyright-tag{
     margin-bottom: 20px;
 }
+
+p.copyright-tag{
+	text-align:center;
+}

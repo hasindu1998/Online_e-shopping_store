@@ -50,7 +50,7 @@
 				</div>
 			</div>
 		</div>
-		<center class="copyright-tag">Copyright &#169 2023-2024 GlobalGoods Enterprises PVT Ltd | All Right Reserved</center>
+		<p class="copyright-tag">Copyright &#169 2023-2024 GlobalGoods Enterprises PVT Ltd | All Right Reserved</p>
 	</div>
 	
 </body>
