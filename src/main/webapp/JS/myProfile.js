@@ -43,4 +43,4 @@ function checkChanges() {
         submitButton.disabled = !hasChanges;
 }
 
-window.onload = initializeOriginalData;
+window.onload = initializeOriginalData; 

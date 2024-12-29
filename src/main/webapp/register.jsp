@@ -10,6 +10,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/CSS/index.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/CSS/register.css">
+    <script type="text/javascript" src="${pageContext.request.contextPath}/JS/register.js"></script>
 	<title>Register Now</title>
 </head>
 <body>
@@ -17,7 +18,7 @@
 		<div class="registerformcontainer">
 			<h2>Start Your Journey with Us!</h2>
 			<p id="regtext">Register now and enjoy a smoother, smarter shopping experience.</p> 
-			<form action="${pageContext.request.contextPath}/RegisterServlet" method="POST">
+			<form id="regform" oninput="comparepwd()" action="${pageContext.request.contextPath}/RegisterServlet" method="POST">
 				<div class="rows">
 					<input type="text" name="firstname" placeholder="First Name" required>
 					<input type="text" name="lastname" placeholder="Last Name" required>
@@ -34,6 +35,9 @@
 					<input type="password" name="password" placeholder="Password" required>
 					<input type="password" name="confirmpassword" placeholder="Confirm Password" required>
 				</div>
+				
+				<p class="error" id="jserror"></p>
+				
 				<div class="radiobtns">
 						<b>User Type :</b>
 						<input type="radio" name="userType" value="seller" required> Seller
@@ -45,7 +49,7 @@
                 </c:if>
                 
 				<div class="rows submitbtn">
-					<input type="submit" value="Register">
+					<input type="submit" id="submitbtn" value="Register">
 				</div>
 			</form>
 		</div>

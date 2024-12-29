@@ -85,3 +85,12 @@
     text-align: center;
     margin-top: 4%;
 }
+
+/*JS Errors*/
+.error { 
+	position: absolute;
+	left: 43%;
+    color: red;
+    text-align: center;
+    margin-top: 4px;
+}
