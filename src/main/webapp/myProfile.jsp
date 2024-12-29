@@ -17,6 +17,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/CSS/index.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/CSS/myProfile.css">
+    <script type="text/javascript" src="${pageContext.request.contextPath}/JS/myProfile.js"></script>
 	<title>My Profile</title>
 </head>
 <body>
@@ -53,7 +54,7 @@
 	             	<p id="error">${Error}</p>
 	             </c:if>
 	             
-				<form action="${pageContext.request.contextPath}/updateUserServlet" method="POST">
+				<form id="profileForm" oninput="checkChanges()" action="${pageContext.request.contextPath}/updateUserServlet" method="POST">
 					<div class="rowscontainer">
 						<div class="rows doublerows">
 							<div class="lableinput">
@@ -109,7 +110,7 @@
 							</div>
 						</div>
 						<div class="rows">
-							<input class="submitbtn" type="submit" placeholder="Save Changes" value="Save Chages">
+							<input class="submitbtn" type="submit" placeholder="Save Changes" value="Save Chages" id="submitBtn" disabled />
 						</div>
 					</div>
 				</form>
