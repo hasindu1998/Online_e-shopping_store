@@ -15,7 +15,7 @@ public class UserDB {
 			Statement stmt = con.createStatement();
 			String query = "SELECT * FROM user WHERE username = '" + username + "' AND password = '" + password + "' LIMIT 1";
 
-			ResultSet rs = stmt.executeQuery(query);
+			ResultSet rs = stmt.executeQuery(query); // executeQuery used for READ
 			if(rs.next()) {
 				//retrive all user data
 				int id = rs.getInt("userid");
@@ -58,7 +58,7 @@ public class UserDB {
 			Connection con = DBconn.getConnection();
 			Statement stmt = con.createStatement();
 			String query = "INSERT INTO User (Fname, Lname, username, password, Email, mobileno, birthday, userType, profilepic_url) VALUES ('" + Fname + "', '" + Lname + "', '" + username + "', '" + password + "', '" + email + "', '" + phone + "', '" + dob + "', '" + usertype + "', '" + propicUrl + "')";
-			int success = stmt.executeUpdate(query);
+			int success = stmt.executeUpdate(query); //executeUpdate used for CREATE,UPDATE,DELETE
 			
 			//close connection
 			con.close();
