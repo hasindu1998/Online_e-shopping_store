@@ -70,7 +70,7 @@ CREATE TABLE `Message` (
 
 LOCK TABLES `Message` WRITE;
 /*!40000 ALTER TABLE `Message` DISABLE KEYS */;
-INSERT INTO `Message` VALUES (1,1,2,'Product Inquiry','Can you provide more details about the Smartphone X?',NULL,'2024-12-01 10:30:00'),(2,1,5,'Discount Request','Is there a discount available on the Rice Pack?','No discounts at the moment.','2024-12-02 14:15:00'),(3,3,1,'Admin Update','Please update your profile.',NULL,'2024-12-03 09:00:00'),(4,4,2,'Product Complaint','The Cricket Bat quality is not as expected.','We will look into this.','2024-12-03 15:45:00'),(5,5,1,'Shipping Inquiry','How long does it take to deliver to Colombo?',NULL,'2024-12-04 08:20:00');
+INSERT INTO `Message` VALUES (3,3,1,'Admin Update','Please update your profile.',NULL,'2024-12-03 09:00:00');
 /*!40000 ALTER TABLE `Message` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -98,7 +98,6 @@ CREATE TABLE `Order_Product` (
 
 LOCK TABLES `Order_Product` WRITE;
 /*!40000 ALTER TABLE `Order_Product` DISABLE KEYS */;
-INSERT INTO `Order_Product` VALUES (1,1,1),(2,1,2),(3,2,3),(4,3,1),(5,4,5);
 /*!40000 ALTER TABLE `Order_Product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -159,7 +158,7 @@ CREATE TABLE `Product` (
   PRIMARY KEY (`productid`),
   KEY `sellerId` (`sellerId`),
   CONSTRAINT `product_ibfk_1` FOREIGN KEY (`sellerId`) REFERENCES `User` (`userid`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -168,7 +167,7 @@ CREATE TABLE `Product` (
 
 LOCK TABLES `Product` WRITE;
 /*!40000 ALTER TABLE `Product` DISABLE KEYS */;
-INSERT INTO `Product` VALUES (1,'Smartphone X',85000.00,10,'Electronics','High-performance smartphone with 128GB storage.','https://example.com/smartphone.jpg',2),(2,'Cricket Bat',4500.00,25,'Sports','Professional-grade cricket bat.','https://example.com/cricket_bat.jpg',2),(3,'Face Cream',1200.00,50,'Health & Beauty','Moisturizing cream for all skin types.','https://example.com/face_cream.jpg',5),(4,'Rice Pack 5kg',700.00,100,'Groceries','High-quality white rice.','https://example.com/rice_pack.jpg',5),(5,'Notebook Set',300.00,200,'Stationary','Set of 5 A4 notebooks.','https://example.com/notebook_set.jpg',5);
+INSERT INTO `Product` VALUES (9,'saban',100.00,12,'Groceries','soap','',9);
 /*!40000 ALTER TABLE `Product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -198,7 +197,7 @@ CREATE TABLE `User` (
   PRIMARY KEY (`userid`),
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `Email` (`Email`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -207,7 +206,7 @@ CREATE TABLE `User` (
 
 LOCK TABLES `User` WRITE;
 /*!40000 ALTER TABLE `User` DISABLE KEYS */;
-INSERT INTO `User` VALUES (1,'moditham','Moditha','Marasingha','moditha@example.com','0711234567','2002-07-15','modi1234','admin','123 Lotus Rd','Colombo','Western','Sri Lanka','10100','https://example.com/moditha.jpg'),(2,'hasindu','hasindu','Perera','kasun@example.com','0772345678','1998-03-12','hasindu1234','seller','456 Jasmine St','Galle','Southern','Sri Lanka','80000','https://example.com/kasun.jpg'),(3,'nimal_fernando','Nimal','Fernando','nimal@example.com','0703456789','1985-11-20','admin1234','admin','789 Orchid Ave','Kandy','Central','Sri Lanka','20000','https://example.com/nimal.jpg'),(4,'kamal_w','Kamal','Wijesinghe','kamal@example.com','0724567890','1995-02-08','buyer1234','buyer','321 Rose St','Matara','Southern','Sri Lanka','81000','https://example.com/kamal.jpg'),(5,'isuri_g','Isuri','Gunasekara','isuri@example.com','0765678901','2000-09-25','seller1234','seller','654 Lily Ln','Jaffna','Northern','Sri Lanka','40000','https://example.com/isuri.jpg');
+INSERT INTO `User` VALUES (1,'moditham','Moditha','Marasingha','moditha2003@gmail.com','071 6899444','2003-08-28','Modi1234','admin','A60/1, Somi Kelum, Hungampola ,Morontota','Kegalle','Sabaragamuwa','Sri Lanka','71220','IMG-20230830-WA0032.jpg'),(3,'nimal_fernando','Nimal','Fernando','nimal@example.com','0703456789','1985-11-20','admin1234','admin','789 Orchid Ave','Kandy','Central','Sri Lanka','20000','https://example.com/nimal.jpg'),(4,'kamal_w','Kamal','Wijesinghe','kamal@example.com','0724567890','1995-02-08','buyer1234','buyer','321 Rose St','Matara','Southern','Sri Lanka','81000','https://example.com/kamal.jpg'),(7,'Hasinduh','Hasindu','Lakshan','hasindu@gmail.com','0777123456','2000-06-30','hasindu1234','buyer',NULL,NULL,NULL,NULL,NULL,'profileicon.webp'),(8,'Nipun','Nipun','Munasingha','nipun@gmail.com','077213456','2003-02-12','nipun1234','seller',NULL,NULL,NULL,NULL,NULL,'profileicon.webp'),(9,'seller','test','seller','test@gmail.com','1111111111','2024-12-12','seller1234','seller',NULL,NULL,NULL,NULL,NULL,'profileicon.webp');
 /*!40000 ALTER TABLE `User` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -220,4 +219,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-04 20:16:49
+-- Dump completed on 2025-01-19 21:36:51
