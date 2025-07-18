@@ -1,32 +1,16 @@
-# Online_e-shopping_store
+# Online Shopping Store
+A comprehensive Java-based Online Shopping Store application designed to manage e-commerce functionalities such as product listings, customer orders, inventory tracking, and payment processing. Built as an Eclipse project with a MySQL database backend.
 
-### Color Palette
+## Introduction
+This project aims to streamline online retail operations by automating essential e-commerce workflows. It supports multiple modules including product catalog management, customer registration, shopping cart functionality, order processing, and payment tracking. The backend is powered by MySQL, and the application is developed using Java within the Eclipse IDE.
 
-1. Buttons - #F27B12
-2. Headings - #02243F
-3. Background - #FDFDFB
+## Features
+Product catalog with add, update, and delete capabilities
 
-|        Page        |    By   | Frontend Status | Backend Status |
-|:------------------:|:-------:|-----------------|----------------|
-| Header             | Moditha | Done            | Done           |
-| Footer             | Hasindu | Done            | N/A            |
-| Home               | Hasindu | Done            | N/A            |
-| Products Page      | Hasindu | Done            |                |
-| Seller Dashboard   | Hasindu | Done            |                |
-| Admin Dashboard    | Moditha | Done            |                |
-| User Profile       | Moditha | Done            | Done           |
-| Signin Page        | Moditha | Done            | Done           |
-| Register Page      | Moditha | Done            | Done           |
-| Cart               | Hasindu | Done            |                |
-| Contact us Page    | Hasindu | Done            |                |
-| Masseges Page      | Moditha | Done            |                |
-| My Orders Page     | Hasindu | Done            |                |
-| My Products Page   | Hasindu | Done            |                |
-| Product Order Page | Moditha | Done            |                |
-| About Us Page      | Moditha | Done            | N/A            |
-| Privacy Policy     | Hasindu | Done            | N/A            |
-
-_Todo_ - Seller Public Profile Page
-### Important
-**Update DBconn.java database link to your own link** <br>
-**Update ProPicUpdateServlet.java file save path to your own file path**
+- Customer registration and login
+- Shopping cart and checkout process
+- Order placement and history tracking
+- Inventory and stock management
+- Secure login for admin and users
+- MySQL database integration
+- Configurable properties file
